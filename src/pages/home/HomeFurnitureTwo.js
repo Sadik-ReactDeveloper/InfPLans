@@ -1,36 +1,34 @@
 import React from "react";
 import HeroSliderTwentyNine from "../../wrappers/hero-slider/HeroSliderTwentyNine";
 import LayoutOne from "../../layouts/LayoutOne";
-import OurWorkFlow from "../../components/astrology/ourworkflow";
+
 import BlogFeatured from "../../wrappers/blog-featured/BlogFeatured";
-import TestimonialOne from "../../wrappers/testimonial/TestimonialOne";
-import FunFactOne from "../../wrappers/fun-fact/FunFactOne";
-import AboutUs from "../../components/astrology/aboutus";
+// import TestimonialOne from "../../wrappers/testimonial/TestimonialOne";
+// import FunFactOne from "../../wrappers/fun-fact/FunFactOne";
+// import AboutUs from "../../components/astrology/aboutus";
 import FeatureIconSix from "../../wrappers/feature-icon/FeatureIconSix";
 import SectionPooja from "../../components/astrology/sectionpooja";
 import SliderList from "../../components/astrology/sliderlist";
-import HomeVideoList from "../../components/astrology/HomeVideoList";
-import OurService from "../../components/astrology/OurService";
+import MainSlider from "../../components/astrology/MainSlider";
+import OurWorkFlow from "../../components/astrology/ourworkflow";
+// import HomeVideoList from "../../components/astrology/HomeVideoList";
+// import OurService from "../../components/astrology/OurService";
 
 const HomeFurnitureTwo = () => {
   return (
     <LayoutOne headerTop="visible">
       {/* hero slider */}
       <HeroSliderTwentyNine />
-      {/* {sliderData.map((silderimg) => {
-        
-      })} */}
+
       {/* First Section */}
 
-      <OurWorkFlow />
       {/* Second section */}
 
       {/* feature text */}
-      <FeatureIconSix spaceBottomClass="pb-30" spaceTopClass="pt-30" />
 
-      <OurService />
+      {/* <OurService /> */}
 
-      <AboutUs />
+      {/* <AboutUs /> */}
       {/* abutus */}
 
       {/* <PredictionallHome /> */}
@@ -41,11 +39,9 @@ const HomeFurnitureTwo = () => {
 
       {/* <FirstSectiontree /> */}
       {/* <TeamMemberOne spaceTopClass="pt-95" spaceBottomClass="pb-70" /> */}
-      <SliderList />
 
-      <SectionPooja />
       {/* third section */}
-      <HomeVideoList />
+      {/* <HomeVideoList /> */}
 
       {/* <SliderYouTubeList /> */}
       {/* Product slider */}
@@ -56,7 +52,7 @@ const HomeFurnitureTwo = () => {
       {/* <NewsletterTwo spaceBottomClass="pb-100" /> */}
 
       {/* fun fact */}
-      <FunFactOne spaceTopClass="pt-30" spaceBottomClass="pb-30" />
+      {/* <FunFactOne spaceTopClass="pt-30" spaceBottomClass="pb-30" /> */}
 
       {/* testimonial */}
       {/* <TestimonialOne
@@ -68,6 +64,11 @@ const HomeFurnitureTwo = () => {
       {/* blog featured */}
 
       <BlogFeatured spaceBottomClass="pb-55" />
+      <FeatureIconSix spaceBottomClass="pb-30" spaceTopClass="pt-30" />
+      <SectionPooja />
+      <OurWorkFlow />
+      <MainSlider />
+      <SliderList />
     </LayoutOne>
   );
 };

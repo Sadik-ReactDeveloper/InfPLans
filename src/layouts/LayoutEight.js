@@ -8,7 +8,7 @@ const LayoutEight = ({
   headerContainerClass,
   headerTop,
   headerBorderStyle,
-  headerPaddingClass
+  headerPaddingClass,
 }) => {
   return (
     <Fragment>
@@ -35,7 +35,7 @@ LayoutEight.propTypes = {
   headerBorderStyle: PropTypes.string,
   headerContainerClass: PropTypes.string,
   headerPaddingClass: PropTypes.string,
-  headerTop: PropTypes.string
+  headerTop: PropTypes.string,
 };
 
 export default LayoutEight;

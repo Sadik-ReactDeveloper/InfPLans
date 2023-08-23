@@ -15,18 +15,18 @@ const HomeFashionFour = () => {
           content="Fashion home of flone react minimalist eCommerce template."
         />
       </MetaTags>
-      <LayoutFive>
-        {/* hero slider */}
-        <HeroSliderTwelve />
-        {/* product grid */}
-        <ProductGridFiveContainer
+      {/* <LayoutFive> */}
+      {/* hero slider */}
+      {/* <HeroSliderTwelve /> */}
+      {/* product grid */}
+      {/* <ProductGridFiveContainer
           spaceTopClass="pt-100"
           spaceBottomClass="pb-100"
           category="accessories"
-        />
-        {/* newsletter */}
-        {/* <NewsletterTwo spaceBottomClass="pb-100" /> */}
-      </LayoutFive>
+        /> */}
+      {/* newsletter */}
+      {/* <NewsletterTwo spaceBottomClass="pb-100" /> */}
+      {/* </LayoutFive> */}
     </Fragment>
   );
 };

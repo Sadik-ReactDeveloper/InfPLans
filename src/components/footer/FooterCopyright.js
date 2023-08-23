@@ -9,21 +9,24 @@ const FooterCopyright = ({ footerLogo, spaceBottomClass, colorClass }) => {
         colorClass ? colorClass : ""
       }`}
     >
-      <div className="footer-logo">
+      <div className="footerImg mb-2">
         <Link to={process.env.PUBLIC_URL + "/"}>
           <img
             alt=""
             src={process.env.PUBLIC_URL + footerLogo}
-            style={{ width: 180 }}
+            // style={{ width: 180 }}
           />
         </Link>
       </div>
       <p>
-        &copy; {new Date().getFullYear()}{" "}
+        INFPlans.com Insurance provides <br />
+        innovating visitor insurance <br />
+        options for international travelers.
+        {/* &copy; {new Date().getFullYear()}{" "}
         <a href="/" rel="noopener noreferrer" target="">
           Astrogyata
         </a>
-        .<br /> All Rights Reserved
+        .<br /> All Rights Reserved */}
       </p>
     </div>
   );

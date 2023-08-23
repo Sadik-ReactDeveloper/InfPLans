@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { animateScroll } from "react-scroll";
 import FooterCopyright from "../../components/footer/FooterCopyright";
 import FooterNewsletter from "../../components/footer/FooterNewsletter";
-import logoastro from "../../assets/img/logoastro.png";
+import logo from "../../assets/imgs/footer.png";
 import axiosConfig from "../../axiosConfig";
 
 const FooterOne = ({
@@ -79,15 +79,15 @@ const FooterOne = ({
         <div className="row">
           <div
             className={`${
-              sideMenu ? "col-xl-2 col-sm-4" : "col-lg-2 col-sm-4"
+              sideMenu ? "col-xl-3 col-sm-4" : "col-lg-3 col-sm-4"
             }`}
           >
-            <FooterCopyright footerLogo={logoastro} spaceBottomClass="mb-30" />
+            <FooterCopyright footerLogo={logo} spaceBottomClass="mb-30" />
           </div>
 
           <div
             className={`${
-              sideMenu ? "col-xl-2 col-sm-4" : "col-lg-2 col-sm-6"
+              sideMenu ? "col-xl-3 col-sm-4" : "col-lg-3 col-sm-6"
             }`}
           >
             <div
@@ -98,13 +98,13 @@ const FooterOne = ({
               }`}
             >
               <div className="footer-title">
-                <h3>Horoscope</h3>
+                <h3>Navigate Our Site</h3>
               </div>
               <div className="footer-list">
                 <ul>
                   <li>
                     <ul className="submenu">
-                      {categoryList?.map(item => {
+                      {/* {categoryList?.map(item => {
                         return (
                           <li className="" key={item._id}>
                             <Link to={process.env.PUBLIC_URL + "/zodicPage"}>
@@ -112,7 +112,23 @@ const FooterOne = ({
                             </Link>
                           </li>
                         );
-                      })}
+                      })} */}
+                      <li className="">
+                        {/* <Link to={process.env.PUBLIC_URL + "/zodicPage"}>
+                          {item.title}
+                        </Link> */}
+
+                        <Link>Home</Link>
+                      </li>
+                      <li>
+                        <Link>Plans</Link>
+                      </li>
+                      <li>
+                        <Link>Apply</Link>
+                      </li>
+                      <li>
+                        <Link>Extend</Link>
+                      </li>
                     </ul>
                   </li>
                 </ul>
@@ -122,7 +138,7 @@ const FooterOne = ({
 
           <div
             className={`${
-              sideMenu ? "col-xl-2 col-sm-4" : "col-lg-2 col-sm-6"
+              sideMenu ? "col-xl-3 col-sm-4" : "col-lg-3 col-sm-6"
             }`}
           >
             <div
@@ -140,42 +156,78 @@ const FooterOne = ({
                 </ul>
               </div>
               <div className="footer-title">
-                <h3>Remedies</h3>
+                <h3>Our Plans</h3>
               </div>
               <div className="footer-list">
                 <ul>
                   <li>
                     <ul className="submenu">
                       <li className="">
-                        <Link to={process.env.PUBLIC_URL + "/luckyGemstone"}>
-                          Know your Lucky Gemstone
+                        <Link
+                        // to={process.env.PUBLIC_URL + "/luckyGemstone"}
+                        >
+                          Elite Network
                         </Link>
                       </li>
                       <li className="">
-                        <Link to={process.env.PUBLIC_URL + "/lalKitab"}>
-                          Lal Kitab
+                        <Link
+                        // to={process.env.PUBLIC_URL + "/lalKitab"}
+                        >
+                          Elite Network Plus
                         </Link>
                       </li>
                       <li className="">
-                        <Link to={process.env.PUBLIC_URL + "/lalkitabPlanets"}>
-                          Lal Kitab Planets
+                        <Link
+                        // to={process.env.PUBLIC_URL + "/lalkitabPlanets"}
+                        >
+                          Premier
                         </Link>
                       </li>
 
                       <li className="">
-                        <Link to={process.env.PUBLIC_URL + "/bookEvent"}>
-                          Book Online Puja
+                        <Link
+                        // to={process.env.PUBLIC_URL + "/bookEvent"}
+                        >
+                          Premier Plus
                         </Link>
                       </li>
-                      {pages[0]?.other === true ? (
+                      <li className="">
+                        <Link
+                        // to={process.env.PUBLIC_URL + "/bookEvent"}
+                        >
+                          Standard
+                        </Link>
+                      </li>
+                      <li className="">
+                        <Link
+                        // to={process.env.PUBLIC_URL + "/bookEvent"}
+                        >
+                          Safe Traveler USA
+                        </Link>
+                      </li>
+                      <li className="">
+                        <Link
+                        // to={process.env.PUBLIC_URL + "/bookEvent"}
+                        >
+                          HOP Assist
+                        </Link>
+                      </li>
+                      <li className="">
+                        <Link
+                        // to={process.env.PUBLIC_URL + "/bookEvent"}
+                        >
+                          BMI Assist
+                        </Link>
+                      </li>
+                      {/* {pages[0]?.other === true ? (
                         <>
                           <div className="footer-title mt-3">
                             <h3>Others</h3>
                           </div>
                         </>
-                      ) : null}
+                      ) : null} */}
 
-                      <div className="footer-list">
+                      {/* <div className="footer-list">
                         <ul>
                           <li>
                             <ul className="submenu">
@@ -202,7 +254,7 @@ const FooterOne = ({
                             </ul>
                           </li>
                         </ul>
-                      </div>
+                      </div> */}
                     </ul>
                   </li>
                 </ul>
@@ -210,7 +262,7 @@ const FooterOne = ({
             </div>
           </div>
 
-          <div
+          {/* <div
             className={`${
               sideMenu ? "col-xl-2 col-sm-4" : "col-lg-2 col-sm-6"
             }`}
@@ -259,7 +311,7 @@ const FooterOne = ({
               <div className="footer-list">
                 <ul>
                   <li>
-                    {/* <h3>Dosh</h3> */}
+                 
                     <ul className="submenu">
                       <li className="">
                         <Link to={process.env.PUBLIC_URL + "/pages/login"}>
@@ -276,14 +328,14 @@ const FooterOne = ({
                 </ul>
               </div>
             </div>
-          </div>
+          </div> */}
 
-          <div
+          {/* <div
             className={`${
               sideMenu ? "col-xl-2 col-sm-4" : "col-lg-2 col-sm-4"
             }`}
-          >
-            <div
+          > */}
+          {/* <div
               className={`${
                 sideMenu
                   ? "footer-widget mb-30 ml-95"
@@ -291,7 +343,6 @@ const FooterOne = ({
               }`}
             >
               <div className="footer-title">
-                {/* <h3>USEFUL LINKS</h3> */}
                 <h3>Useful Links</h3>
               </div>
               <div className="footer-list">
@@ -347,12 +398,12 @@ const FooterOne = ({
                   </li>
                 </ul>
               </div>
-            </div>
-          </div>
+            </div> */}
+          {/* </div> */}
 
           <div
             className={`${
-              sideMenu ? "col-xl-2 col-sm-8" : "col-lg-2 col-sm-6"
+              sideMenu ? "col-xl-3 col-sm-8" : "col-lg-3 col-sm-6"
             }`}
           >
             {/* footer newsletter */}
