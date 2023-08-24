@@ -270,7 +270,7 @@ select.form-control.form-select {
   padding: 1px 8px 1px 15px;
   color: #00b67a;
   position: absolute;
-  left: 426px;
+  left: 380px;
   font-weight: 800;
 }
 .members-producers-column {
@@ -287,7 +287,7 @@ select.form-control.form-select {
   padding-bottom: 130px;
 }
 section#home-testimonial-section {
-  padding-top: 150px;
+  padding-top: 50px;
   padding-bottom: 10px;
 }
 .SliderListImg {
@@ -360,7 +360,88 @@ a {
   margin-right: auto;
   margin-top: 30px;
 }
+li.nav-item {
+  width: 33%;
+  /* border-top: 2px solid black; */
+}
+
 // Plan section Closed
+// tab panel open
+a.TabBmi.nav-link {
+  background: #fff;
+  color: #111;
+  position: relative;
+  font-weight: 600;
+  margin-top: -9px;
+  border: 0;
+  font-size: 25px;
+  padding: 15px 50px;
+  // border-top: 10px solid;
+}
+a.active .nav-link {
+  border-top: 10px solid;
+}
+ul.tabList {
+  line-height: 2;
+  list-style: disc;
+  text-align: left;
+  padding-left: 30px;
+}
+li.disc {
+  // list-style: disc;
+  padding: 10px 0;
+  // margin-left: 50px;
+}
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+  border-top: 10px solid #000;
+  // color: #60435f;
+  /* background-color: var(--bs-nav-tabs-link-active-bg); */
+  /* border-color: var(--bs-nav-tabs-link-active-border-color); */
+}
+.bmi-plans-tab section div ul {
+  line-height: 2;
+  list-style: disc;
+  text-align: left;
+  padding-left: 30px;
+}
+// #plans-section-7 .bmi-bg {
+//   background-color: #f2f2f2;
+//   padding: 20px 0 10px;
+//   width: 85%;
+//   margin: 0 auto 30px;
+//   border: 1px solid #c4c4c4;
+// }
+
+// .text-center.bmi-bg {
+//   padding: 15px 25px;
+// }
+
+#centerDiv p {
+  font-weight: 400;
+  padding-top: 5px;
+  font-size: 18px;
+  padding: 10px 33px;
+  line-height: 2;
+}
+// tab panel closed
+// after tab pane open
+.text-blue,
+a {
+  color: #252362;
+}
+.features-title {
+  font-size: 18px;
+  padding-top: 20px;
+}
+// after tab pane closed
+#centerDiv .bmi-plans-tab {
+  background-color: #f2f2f2;
+  padding: 20px 0 10px;
+  width: 85%;
+  margin: 0 auto 30px;
+  border: 1px solid #c4c4c4;
+}
 .footer-title {
   padding-top: 10px;
 }
@@ -368,6 +449,7 @@ a {
   width: 300px !important;
   margin: 0 4px;
 }
+
 .vdl-l {
   background: #ffd59e;
   padding: 10px 18px;
@@ -534,10 +616,10 @@ h3.stltext {
   text-align: center;
   margin-bottom: 50px;
 }
-section.stt-1 {
-  background: #f1f1f154;
-  padding: 50px 0px;
-}
+// section.stt-1 {
+//   background: #f1f1f154;
+//   padding: 50px 0px;
+// }
 .bx-1 {
   text-align: center;
   text-align: center;
@@ -1997,9 +2079,9 @@ p.priceofadd {
 .othersubmain.col-lg-12 {
   margin-top: 25px;
 }
-section.mt-30.ratingmaindiv {
-  margin-top: 161px;
-}
+// section.mt-30.ratingmaindiv {
+//   margin-top: 161px;
+// }
 button.filtericon.btn.btn-secondary {
   background: none;
   color: black;

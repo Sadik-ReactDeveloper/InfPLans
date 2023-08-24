@@ -76,7 +76,7 @@ function OurWorkFlow({ data, sliderClass, sliderdemoClass }) {
     if (list.length >= 0) setScrollList(list);
   }, []);
   return (
-    <section className="stt-2 " id="home-testimonial-section">
+    <section className=" " id="home-testimonial-section">
       <div className="container-fluid">
         <div className="row">
           <div className="col-lg-7 text-right left-content myPlanImg"></div>
