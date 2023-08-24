@@ -1,9 +1,6 @@
 import PropTypes from "prop-types";
 import React, { useEffect, useState } from "react";
 import Swiper from "react-id-swiper";
-//import testimonialData from "../../data/testimonial/testimonial-one.json";
-// import TestimonialOneSingle from "../../components/testimonial/TestimonialOneSingle.js";
-// import textbottom from "../../assets/img/textbottom.png";
 import sldr1 from "../../assets/imgs/MainSlider/ITIJ-logo.png";
 import sldr2 from "../../assets/imgs/MainSlider/cn-traveler-logo.png";
 import sldr3 from "../../assets/imgs/MainSlider/considerable-logo.png";

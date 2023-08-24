@@ -38,6 +38,9 @@ const ShopListStandard = lazy(() => import("./pages/shop/ShopListStandard"));
 const ShopListFullWidth = lazy(() => import("./pages/shop/ShopListFullWidth"));
 const ShopListTwoColumn = lazy(() => import("./pages/shop/ShopListTwoColumn"));
 
+// INF PLans
+
+const InfPlans = lazy(() => import("./components/plans/InfPlans"));
 // product pages
 const Product = lazy(() => import("./pages/shop-product/Product"));
 const ProductTabLeft = lazy(() =>
@@ -60,149 +63,149 @@ const BlogDetailsStandard = lazy(() =>
   import("./pages/blog/BlogDetailsStandard")
 );
 
-const otherpage = lazy(() => import("./components/astrology/OthePage"));
-const BookEvent = lazy(() => import("./components/astrology/BookEvent"));
-const Bookpoojadetail = lazy(() =>
-  import("./components/astrology/Bookpoojadetail")
-);
+// const otherpage = lazy(() => import("./components/astrology/OthePage"));
+// const BookEvent = lazy(() => import("./components/astrology/BookEvent"));
+// const Bookpoojadetail = lazy(() =>
+//   import("./components/astrology/Bookpoojadetail")
+// );
 // other pages
 const About = lazy(() => import("./pages/other/About"));
 const Contact = lazy(() => import("./pages/other/Contact"));
 const faqPage = lazy(() => import("./wrappers/myPage/FaqPage"));
 const FAQ = lazy(() => import("./wrappers/myPage/Faq"));
 
-const privacyPolicy = lazy(() => import("./wrappers/myPage/privacyPolicy"));
-const MyAccount = lazy(() => import("./pages/other/MyAccount"));
-const LoginRegister = lazy(() => import("./pages/other/LoginRegister"));
-const Step = lazy(() => import("./pages/other/Step"));
-const Phone = lazy(() => import("./pages/other/Phone"));
-const Otp = lazy(() => import("./pages/other/Otp"));
-const OtpVerify = lazy(() =>
-  import("./components/astrology/astrologerpages/OtpVerify")
-);
+// const privacyPolicy = lazy(() => import("./wrappers/myPage/privacyPolicy"));
+// const MyAccount = lazy(() => import("./pages/other/MyAccount"));
+// const LoginRegister = lazy(() => import("./pages/other/LoginRegister"));
+// const Step = lazy(() => import("./pages/other/Step"));
+// const Phone = lazy(() => import("./pages/other/Phone"));
+// const Otp = lazy(() => import("./pages/other/Otp"));
+// const OtpVerify = lazy(() =>
+//   import("./components/astrology/astrologerpages/OtpVerify")
+// );
 const Password = lazy(() => import("./pages/other/Password"));
 const ResetPassword = lazy(() => import("./pages/other/ResetPassword"));
 const ForgotPassword = lazy(() => import("./pages/other/ForgotPassword"));
 
-const RegisterAstro = lazy(() =>
-  import("./components/astrology/astrologerpages/RegisterAstro")
-);
-const CompleteProAstro = lazy(() =>
-  import("./components/astrology/astrologerpages/CompleteProAstro")
-);
+// const RegisterAstro = lazy(() =>
+//   import("./components/astrology/astrologerpages/RegisterAstro")
+// );
+// const CompleteProAstro = lazy(() =>
+//   import("./components/astrology/astrologerpages/CompleteProAstro")
+// );
 
-const DemoVideoCall = lazy(() =>
-  import("./components/astrology/DemoVideoCall")
-);
+// const DemoVideoCall = lazy(() =>
+//   import("./components/astrology/DemoVideoCall")
+// );
 
-const DemoCall = lazy(() => import("./components/astrology/DemoCall"));
+// const DemoCall = lazy(() => import("./components/astrology/DemoCall"));
 
-// zegocloud //
-const Room = lazy(() => import("./components/astrology/zegocloud/Room"));
-const LiveVideo = lazy(() =>
-  import("./components/astrology/zegocloud/LiveVideo")
-);
-const VideoCall = lazy(() =>
-  import("./components/astrology/zegocloud/VideoCall")
-);
-const LiveStream = lazy(() =>
-  import("./components/astrology/zegocloud/LiveStream")
-);
+// // zegocloud //
+// const Room = lazy(() => import("./components/astrology/zegocloud/Room"));
+// const LiveVideo = lazy(() =>
+//   import("./components/astrology/zegocloud/LiveVideo")
+// );
+// const VideoCall = lazy(() =>
+//   import("./components/astrology/zegocloud/VideoCall")
+// );
+// const LiveStream = lazy(() =>
+//   import("./components/astrology/zegocloud/LiveStream")
+// );
 
-const Call = lazy(() => import("./components/astrology/zegocloud/Call"));
-// astology pages start
+// const Call = lazy(() => import("./components/astrology/zegocloud/Call"));
+// // astology pages start
 
-const AlertPage = lazy(() => import("./components/astrology/AlertPage"));
+// const AlertPage = lazy(() => import("./components/astrology/AlertPage"));
 
-const CustomerSupport = lazy(() =>
-  import("./components/astrology/CustomerSupport")
-);
-const AskQuestion = lazy(() => import("./components/astrology/AskQuestion"));
-const AstroProfileVideo = lazy(() =>
-  import("./components/astrology/AstroProfileVideo")
-);
+// const CustomerSupport = lazy(() =>
+//   import("./components/astrology/CustomerSupport")
+// );
+// const AskQuestion = lazy(() => import("./components/astrology/AskQuestion"));
+// const AstroProfileVideo = lazy(() =>
+//   import("./components/astrology/AstroProfileVideo")
+// );
 
-const AskQuestionList = lazy(() =>
-  import("./components/astrology/AskQuestionList")
-);
+// const AskQuestionList = lazy(() =>
+//   import("./components/astrology/AskQuestionList")
+// );
 // const LiveAstrologer = lazy(() =>
 //   import("./components/astrology/LiveAstrologer")
 // );
-const LiveAstrologer = lazy(() => import("./components/astrology/LiveConnect"));
+// const LiveAstrologer = lazy(() => import("./components/astrology/LiveConnect"));
 
-// Live Main Curent use
-const LiveAllUser = lazy(() => import("./components/astrology/LiveAstro"));
-const LalKitab = lazy(() => import("./components/astrology/LalKitab"));
-const LalkitabPlanets = lazy(() =>
-  import("./components/astrology/LalkitabPlanets")
-);
+// // Live Main Curent use
+// const LiveAllUser = lazy(() => import("./components/astrology/LiveAstro"));
+// const LalKitab = lazy(() => import("./components/astrology/LalKitab"));
+// const LalkitabPlanets = lazy(() =>
+//   import("./components/astrology/LalkitabPlanets")
+// );
 // const LalKitab = lazy(() => import("./components/astrology/LalKitab"));
 
-const LalKitabPage = lazy(() => import("./components/astrology/LalKitabPage"));
-const Numerology = lazy(() => import("./components/astrology/Numerology"));
-const Tarot = lazy(() => import("./components/astrology/Tarot"));
-const LuckyGemstone = lazy(() =>
-  import("./components/astrology/LuckyGemstone")
-);
-const ShubhMuhurat = lazy(() => import("./components/astrology/ShubhMuhurat"));
-const TodayFestival = lazy(() =>
-  import("./components/astrology/TodayFestival")
-);
+// const LalKitabPage = lazy(() => import("./components/astrology/LalKitabPage"));
+// const Numerology = lazy(() => import("./components/astrology/Numerology"));
+// const Tarot = lazy(() => import("./components/astrology/Tarot"));
+// const LuckyGemstone = lazy(() =>
+//   import("./components/astrology/LuckyGemstone")
+// );
+// const ShubhMuhurat = lazy(() => import("./components/astrology/ShubhMuhurat"));
+// const TodayFestival = lazy(() =>
+//   import("./components/astrology/TodayFestival")
+// );
 
-const LoveAstrologer = lazy(() =>
-  import("./components/astrology/LoveAstrologer")
-);
-const PanchangPage = lazy(() => import("./components/astrology/PanchangPage"));
-const TodayPanchang = lazy(() =>
-  import("./components/astrology/TodayPanchang")
-);
-const BasicPanchang = lazy(() =>
-  import("./components/astrology/BasicPanchang")
-);
+// const LoveAstrologer = lazy(() =>
+//   import("./components/astrology/LoveAstrologer")
+// );
+// const PanchangPage = lazy(() => import("./components/astrology/PanchangPage"));
+// const TodayPanchang = lazy(() =>
+//   import("./components/astrology/TodayPanchang")
+// );
+// const BasicPanchang = lazy(() =>
+//   import("./components/astrology/BasicPanchang")
+// );
 
 // const BookEvent = lazy(() => import("./components/astrology/BookEvent"));
-const AstroRating = lazy(() => import("./components/astrology/AstroRating"));
-const OrderHistory = lazy(() => import("./components/astrology/OrderHistory"));
-const UserChatHistoryList = lazy(() =>
-  import("./components/astrology/UserChatHistoryList")
-);
-const UserCallHistrory = lazy(() =>
-  import("./components/astrology/UserCallHistrory")
-);
-const UserChatHistory = lazy(() =>
-  import("./components/astrology/UserChatHistory")
-);
+// const AstroRating = lazy(() => import("./components/astrology/AstroRating"));
+// const OrderHistory = lazy(() => import("./components/astrology/OrderHistory"));
+// const UserChatHistoryList = lazy(() =>
+//   import("./components/astrology/UserChatHistoryList")
+// );
+// const UserCallHistrory = lazy(() =>
+//   import("./components/astrology/UserCallHistrory")
+// );
+// const UserChatHistory = lazy(() =>
+//   import("./components/astrology/UserChatHistory")
+// );
 
-const UserRequestForm = lazy(() =>
-  import("./components/astrology/UserRequestForm")
-);
-const UserRequestFormCall = lazy(() =>
-  import("./components/astrology/UserRequestFormCall")
-);
-const CallList = lazy(() => import("./components/astrology/callList/CallList"));
-const VideoList = lazy(() =>
-  import("./components/astrology/callList/VideoList")
-);
-const ChatListData = lazy(() =>
-  import("./components/astrology/chatList/ChatList")
-);
+// const UserRequestForm = lazy(() =>
+//   import("./components/astrology/UserRequestForm")
+// );
+// const UserRequestFormCall = lazy(() =>
+//   import("./components/astrology/UserRequestFormCall")
+// );
+// const CallList = lazy(() => import("./components/astrology/callList/CallList"));
+// const VideoList = lazy(() =>
+//   import("./components/astrology/callList/VideoList")
+// );
+// const ChatListData = lazy(() =>
+//   import("./components/astrology/chatList/ChatList")
+// );
 
-const UserRequestFormVideoCall = lazy(() =>
-  import("./components/astrology/UserRequestFormVideoCall")
-);
-const CustomerSupportForm = lazy(() =>
-  import("./components/astrology/CustomerSupportForm")
-);
-const CustomerSupportView = lazy(() =>
-  import("./components/astrology/CustomerSupportView")
-);
+// const UserRequestFormVideoCall = lazy(() =>
+//   import("./components/astrology/UserRequestFormVideoCall")
+// );
+// const CustomerSupportForm = lazy(() =>
+//   import("./components/astrology/CustomerSupportForm")
+// );
+// const CustomerSupportView = lazy(() =>
+//   import("./components/astrology/CustomerSupportView")
+// );
 
-const FreeKundli = lazy(() =>
-  import("./components/astrology/kundalimatch/freekundli")
-);
-const PitraDosh = lazy(() => import("./components/astrology/PitraDosh"));
-const KalsharpDosh = lazy(() => import("./components/astrology/KalsharpDosh"));
-const ManglikDosh = lazy(() => import("./components/astrology/ManglikDosh"));
+// const FreeKundli = lazy(() =>
+//   import("./components/astrology/kundalimatch/freekundli")
+// );
+// const PitraDosh = lazy(() => import("./components/astrology/PitraDosh"));
+// const KalsharpDosh = lazy(() => import("./components/astrology/KalsharpDosh"));
+// const ManglikDosh = lazy(() => import("./components/astrology/ManglikDosh"));
 // const PlanetDasha = lazy(() =>
 //   import("./components/astrology/dasha/PlanetDasha")
 // );
@@ -214,163 +217,163 @@ const ManglikDosh = lazy(() => import("./components/astrology/ManglikDosh"));
 // );
 // const CharDasha = lazy(() => import("./components/astrology/dasha/CharDasha"));
 
-const bannerSection = lazy(() =>
-  import("./components/astrology/bannerSection")
-);
-const TeamMemberOne = lazy(() =>
-  import("././wrappers/team-member/TeamMemberOne")
-);
-const HomeCategory = lazy(() => import("./components/astrology/homecategory"));
-const OurWorkFlow = lazy(() => import("./components/astrology/ourworkflow.js"));
-const PredictionallHome = lazy(() =>
-  import("./components/astrology/predictionallhome")
-);
-const AboutUs = lazy(() => import("./components/astrology/aboutus"));
-const AboutDetail = lazy(() => import("./components/astrology/aboutdetail"));
-const AstrologerDetail = lazy(() =>
-  import("./components/astrology/astrologerdetail")
-);
-const AstrologerSignup = lazy(() =>
-  import("./components/astrology/astrologersignup")
-);
-const AstrologerLogin = lazy(() =>
-  import("./components/astrology/astrologerlogin")
-);
-const AstroTeam = lazy(() => import("./components/astrology/astroteam"));
-const SectionPooja = lazy(() => import("./components/astrology/sectionpooja"));
-const ProfileDetail = lazy(() =>
-  import("./components/astrology/profiledetail")
-);
-const PoojaDetail = lazy(() => import("./components/astrology/poojadetail"));
-const HeroscopesAll = lazy(() =>
-  import("./components/astrology/heroscopesall")
-);
+// const bannerSection = lazy(() =>
+//   import("./components/astrology/bannerSection")
+// );
+// const TeamMemberOne = lazy(() =>
+//   import("././wrappers/team-member/TeamMemberOne")
+// );
+// const HomeCategory = lazy(() => import("./components/astrology/homecategory"));
+// const OurWorkFlow = lazy(() => import("./components/astrology/ourworkflow.js"));
+// const PredictionallHome = lazy(() =>
+//   import("./components/astrology/predictionallhome")
+// );
+// const AboutUs = lazy(() => import("./components/astrology/aboutus"));
+// const AboutDetail = lazy(() => import("./components/astrology/aboutdetail"));
+// const AstrologerDetail = lazy(() =>
+//   import("./components/astrology/astrologerdetail")
+// );
+// const AstrologerSignup = lazy(() =>
+//   import("./components/astrology/astrologersignup")
+// );
+// const AstrologerLogin = lazy(() =>
+//   import("./components/astrology/astrologerlogin")
+// );
+// const AstroTeam = lazy(() => import("./components/astrology/astroteam"));
+// const SectionPooja = lazy(() => import("./components/astrology/sectionpooja"));
+// const ProfileDetail = lazy(() =>
+//   import("./components/astrology/profiledetail")
+// );
+// const PoojaDetail = lazy(() => import("./components/astrology/poojadetail"));
+// const HeroscopesAll = lazy(() =>
+//   import("./components/astrology/heroscopesall")
+// );
 // const HeroscopesDataList = lazy(() =>
 //   import("./components/astrology/heroscope/HeroscopeData")
 // );
 
-const HeroscopesTwo = lazy(() =>
-  import("./components/astrology/heroscopestwo")
-);
-const HeroscopesTwo1 = lazy(() =>
-  import("./components/astrology/heroscopestwo1")
-);
-const HeroscopesTwo2 = lazy(() =>
-  import("./components/astrology/heroscopestwo2")
-);
-const HeroscopesTwo3 = lazy(() =>
-  import("./components/astrology/heroscopestwo3")
-);
-const HeroscopesTwo4 = lazy(() =>
-  import("./components/astrology/heroscopestwo4")
-);
-const HoroscopeDetail = lazy(() =>
-  import("./components/astrology/HoroscopeDetail")
-);
-const HoroscopeDetail1 = lazy(() =>
-  import("./components/astrology/HoroscopeDetail1")
-);
-const HoroscopeDetail2 = lazy(() =>
-  import("./components/astrology/HoroscopeDetail2")
-);
-const HoroscopeDetail3 = lazy(() =>
-  import("./components/astrology/HoroscopeDetail3")
-);
-const ZodicPage = lazy(() => import("./components/astrology/ZodicPage"));
-const AstromallList = lazy(() =>
-  import("./components/astrology/astromallList")
-);
-const PoojaProductList = lazy(() =>
-  import("./components/astrology/PoojaProductList")
-);
-const ProductList = lazy(() => import("./components/astrology/ProductList"));
-const ConsultantList = lazy(() =>
-  import("./components/astrology/ConsultantList")
-);
-const CartList = lazy(() => import("./pages/other/CartList"));
+// const HeroscopesTwo = lazy(() =>
+//   import("./components/astrology/heroscopestwo")
+// );
+// const HeroscopesTwo1 = lazy(() =>
+//   import("./components/astrology/heroscopestwo1")
+// );
+// const HeroscopesTwo2 = lazy(() =>
+//   import("./components/astrology/heroscopestwo2")
+// );
+// const HeroscopesTwo3 = lazy(() =>
+//   import("./components/astrology/heroscopestwo3")
+// );
+// const HeroscopesTwo4 = lazy(() =>
+//   import("./components/astrology/heroscopestwo4")
+// );
+// const HoroscopeDetail = lazy(() =>
+//   import("./components/astrology/HoroscopeDetail")
+// );
+// const HoroscopeDetail1 = lazy(() =>
+//   import("./components/astrology/HoroscopeDetail1")
+// );
+// const HoroscopeDetail2 = lazy(() =>
+//   import("./components/astrology/HoroscopeDetail2")
+// );
+// const HoroscopeDetail3 = lazy(() =>
+//   import("./components/astrology/HoroscopeDetail3")
+// );
+// const ZodicPage = lazy(() => import("./components/astrology/ZodicPage"));
+// const AstromallList = lazy(() =>
+//   import("./components/astrology/astromallList")
+// );
+// const PoojaProductList = lazy(() =>
+//   import("./components/astrology/PoojaProductList")
+// );
+// const ProductList = lazy(() => import("./components/astrology/ProductList"));
+// const ConsultantList = lazy(() =>
+//   import("./components/astrology/ConsultantList")
+// );
+// const CartList = lazy(() => import("./pages/other/CartList"));
 
-const OurService = lazy(() => import("./components/astrology/OurService"));
-const ServiceList = lazy(() => import("./components/astrology/ServiceList"));
+// const OurService = lazy(() => import("./components/astrology/OurService"));
+// const ServiceList = lazy(() => import("./components/astrology/ServiceList"));
 
-const AllAstrologerList = lazy(() =>
-  import("./components/astrology/allastrologerlist")
-);
-const WaitingPage = lazy(() => import("./components/WaitingPage/Waitingpage"));
-const WaitingPagechat = lazy(() =>
-  import("./components/WaitingPage/WaitingPageChat")
-);
-const WaitingPagevideo = lazy(() =>
-  import("./components/WaitingPage/WaitingPageVideo")
-);
-const AllAstrochatList = lazy(() =>
-  import("./components/astrology/allastrochatlist")
-);
+// const AllAstrologerList = lazy(() =>
+//   import("./components/astrology/allastrologerlist")
+// );
+// const WaitingPage = lazy(() => import("./components/WaitingPage/Waitingpage"));
+// const WaitingPagechat = lazy(() =>
+//   import("./components/WaitingPage/WaitingPageChat")
+// );
+// const WaitingPagevideo = lazy(() =>
+//   import("./components/WaitingPage/WaitingPageVideo")
+// );
+// const AllAstrochatList = lazy(() =>
+//   import("./components/astrology/allastrochatlist")
+// );
 
-const AutoSearch = lazy(() => import("./components/astrology/autosearch"));
-const MatchSearch = lazy(() => import("./components/astrology/MatchSearch"));
+// const AutoSearch = lazy(() => import("./components/astrology/autosearch"));
+// const MatchSearch = lazy(() => import("./components/astrology/MatchSearch"));
 
-const SliderDemo = lazy(() => import("./components/astrology/sliderdemo"));
-const SliderList = lazy(() => import("./components/astrology/sliderlist"));
-const AllMinRecharge = lazy(() =>
-  import("./components/astrology/AllMinRecharge")
-);
-const ChatRecharge = lazy(() =>
-  import("./components/astrology/selectRecharge/ChatRecharge")
-);
-const CallRecharge = lazy(() =>
-  import("./components/astrology/selectRecharge/CallRecharge")
-);
-const VideoRecharge = lazy(() =>
-  import("./components/astrology/selectRecharge/VideoRecharge")
-);
+// const SliderDemo = lazy(() => import("./components/astrology/sliderdemo"));
+// const SliderList = lazy(() => import("./components/astrology/sliderlist"));
+// const AllMinRecharge = lazy(() =>
+//   import("./components/astrology/AllMinRecharge")
+// );
+// const ChatRecharge = lazy(() =>
+//   import("./components/astrology/selectRecharge/ChatRecharge")
+// );
+// const CallRecharge = lazy(() =>
+//   import("./components/astrology/selectRecharge/CallRecharge")
+// );
+// const VideoRecharge = lazy(() =>
+//   import("./components/astrology/selectRecharge/VideoRecharge")
+// );
 
-const AllMinRechargeCall = lazy(() =>
-  import("./components/astrology/AllMinRechargeCall")
-);
-const AllMinRechargeVideoCall = lazy(() =>
-  import("./components/astrology/AllMinRechargeVideo")
-);
-const ChatList = lazy(() => import("./components/chat/chatlist"));
+// const AllMinRechargeCall = lazy(() =>
+//   import("./components/astrology/AllMinRechargeCall")
+// );
+// const AllMinRechargeVideoCall = lazy(() =>
+//   import("./components/astrology/AllMinRechargeVideo")
+// );
+// const ChatList = lazy(() => import("./components/chat/chatlist"));
 
-const ChatApp = lazy(() => import("./components/chat/ChatApp"));
+// const ChatApp = lazy(() => import("./components/chat/ChatApp"));
 
-const DemoChat = lazy(() => import("./components/astrology/DemoChat"));
+// const DemoChat = lazy(() => import("./components/astrology/DemoChat"));
 
-const KundaliForm = lazy(() =>
-  import("./components/astrology/kundalimatch/kundaliform")
-);
-const KundaliMatchList = lazy(() =>
-  import("./components/astrology/kundalimatch/kundalimatchlist")
-);
-const WalletMoney = lazy(() => import("./components/astrology/WalletMoney"));
-const WalletTransacList = lazy(() =>
-  import("./components/astrology/WalletTransacList")
-);
-const ConversationList = lazy(() =>
-  import("./components/astrology/ConsultantList")
-);
-const PaymentDetail = lazy(() =>
-  import("./components/astrology/PaymentDetail")
-);
-const NotificationList = lazy(() =>
-  import("./components/astrology/NotificationList")
-);
-const WalletAddForm = lazy(() =>
-  import("./components/astrology/WalletAddForm")
-);
-const AddEvent = lazy(() => import("./components/astrology/AddEvent"));
-const AddressForm = lazy(() => import("./components/astrology/AddressForm"));
-const AddressFormEdit = lazy(() =>
-  import("./components/astrology/AddressFormEdit")
-);
-const Home = lazy(() => import("./components/astrology/zegocloud/Home"));
-const Cart = lazy(() => import("./pages/other/Cart"));
-const MyOrder = lazy(() => import("./pages/other/MyOrder"));
-const MyRefund = lazy(() => import("./pages/other/MyRefund"));
-const Mypoojabooked = lazy(() => import("./pages/other/MyPoojabooking.js"));
-const Wishlist = lazy(() => import("./pages/other/Wishlist"));
-const Compare = lazy(() => import("./pages/other/Compare"));
-const Checkout = lazy(() => import("./pages/other/Checkout"));
+// const KundaliForm = lazy(() =>
+//   import("./components/astrology/kundalimatch/kundaliform")
+// );
+// const KundaliMatchList = lazy(() =>
+//   import("./components/astrology/kundalimatch/kundalimatchlist")
+// );
+// const WalletMoney = lazy(() => import("./components/astrology/WalletMoney"));
+// const WalletTransacList = lazy(() =>
+//   import("./components/astrology/WalletTransacList")
+// );
+// const ConversationList = lazy(() =>
+//   import("./components/astrology/ConsultantList")
+// );
+// const PaymentDetail = lazy(() =>
+//   import("./components/astrology/PaymentDetail")
+// );
+// const NotificationList = lazy(() =>
+//   import("./components/astrology/NotificationList")
+// );
+// const WalletAddForm = lazy(() =>
+//   import("./components/astrology/WalletAddForm")
+// );
+// const AddEvent = lazy(() => import("./components/astrology/AddEvent"));
+// const AddressForm = lazy(() => import("./components/astrology/AddressForm"));
+// const AddressFormEdit = lazy(() =>
+//   import("./components/astrology/AddressFormEdit")
+// );
+// const Home = lazy(() => import("./components/astrology/zegocloud/Home"));
+// const Cart = lazy(() => import("./pages/other/Cart"));
+// const MyOrder = lazy(() => import("./pages/other/MyOrder"));
+// const MyRefund = lazy(() => import("./pages/other/MyRefund"));
+// const Mypoojabooked = lazy(() => import("./pages/other/MyPoojabooking.js"));
+// const Wishlist = lazy(() => import("./pages/other/Wishlist"));
+// const Compare = lazy(() => import("./pages/other/Compare"));
+// const Checkout = lazy(() => import("./pages/other/Checkout"));
 
 const NotFound = lazy(() => import("./pages/other/NotFound"));
 
@@ -411,10 +414,10 @@ const App = props => {
                   />
 
                   {/* astologo route  */}
-                  <Route
+                  {/* <Route
                     path={process.env.PUBLIC_URL + "/homecategory"}
                     component={HomeCategory}
-                  />
+                  /> */}
                   {/* astologo route  Close */}
                   {/* Shop pages */}
                   <Route
@@ -497,19 +500,23 @@ const App = props => {
                     path={process.env.PUBLIC_URL + "/product-slider/:id"}
                     component={ProductSlider}
                   />
-                  <Route
+                  {/* <Route
                     path={process.env.PUBLIC_URL + "/room"}
                     component={Room}
                   />
                   <Route
                     path={process.env.PUBLIC_URL + "/home"}
                     component={Home}
-                  />
+                  /> */}
                   <Route
                     path={process.env.PUBLIC_URL + "/product-fixed-image/:id"}
                     component={ProductFixedImage}
                   />
                   {/* Blog pages */}
+                  <Route
+                    path={process.env.PUBLIC_URL + "/inf-plan"}
+                    component={InfPlans}
+                  />
                   <Route
                     path={process.env.PUBLIC_URL + "/blog-standard/:id"}
                     component={BlogStandard}
@@ -527,7 +534,7 @@ const App = props => {
                     component={BlogRightSidebar}
                   />
                   {/* astrology page path  */}
-                  <Route
+                  {/* <Route
                     path={process.env.PUBLIC_URL + "/bannerSection"}
                     component={bannerSection}
                   />
@@ -570,8 +577,8 @@ const App = props => {
                   <Route
                     path={process.env.PUBLIC_URL + "/loveAstrologer"}
                     component={LoveAstrologer}
-                  />
-                  <Route
+                  /> */}
+                  {/* <Route
                     path={process.env.PUBLIC_URL + "/shubhMuhurat"}
                     component={ShubhMuhurat}
                   />
@@ -622,8 +629,8 @@ const App = props => {
                   <Route
                     path={process.env.PUBLIC_URL + "/my-account"}
                     component={MyAccount}
-                  />
-                  <Route
+                  /> */}
+                  {/* <Route
                     path={process.env.PUBLIC_URL + "/my-order"}
                     component={MyOrder}
                   />
@@ -723,28 +730,13 @@ const App = props => {
                     path={process.env.PUBLIC_URL + "/manglikdosh"}
                     component={ManglikDosh}
                   />
-                  {/* <Route
-                    path={process.env.PUBLIC_URL + "/planetdasha"}
-                    component={PlanetDasha}
-                  />
-                  <Route
-                    path={process.env.PUBLIC_URL + "/vismshottariDasha"}
-                    component={VismshottariDasha}
-                  />
-                  <Route
-                    path={process.env.PUBLIC_URL + "/yoginiDasha"}
-                    component={YoginiDasha}
-                  />
-                  <Route
-                    path={process.env.PUBLIC_URL + "/charDasha"}
-                    component={CharDasha}
-                  /> */}
+                 
 
                   <Route
                     path={process.env.PUBLIC_URL + "/kalsharpdosh"}
                     component={KalsharpDosh}
-                  />
-                  <Route
+                  /> */}
+                  {/* <Route
                     path={process.env.PUBLIC_URL + "/pitradosh"}
                     component={PitraDosh}
                   />
@@ -775,8 +767,8 @@ const App = props => {
                   <Route
                     path={process.env.PUBLIC_URL + "/addressformedit/:id"}
                     component={AddressFormEdit}
-                  />
-                  <Route
+                  /> */}
+                  {/* <Route
                     path={process.env.PUBLIC_URL + "/cartlist/:id"}
                     component={CartList}
                   />
@@ -784,10 +776,7 @@ const App = props => {
                     path={process.env.PUBLIC_URL + "/heroscopesall"}
                     component={HeroscopesAll}
                   />
-                  {/* <Route
-                    path={process.env.PUBLIC_URL + "/heroscope/:id"}
-                    component={HeroscopesDataList}
-                  /> */}
+                 
                   <Route
                     path={process.env.PUBLIC_URL + "/heroscopestwo"}
                     component={HeroscopesTwo}
@@ -799,8 +788,8 @@ const App = props => {
                   <Route
                     path={process.env.PUBLIC_URL + "/heroscopestwo2"}
                     component={HeroscopesTwo2}
-                  />
-                  <Route
+                  /> */}
+                  {/* <Route
                     path={process.env.PUBLIC_URL + "/heroscopestwo3"}
                     component={HeroscopesTwo3}
                   />
@@ -884,8 +873,8 @@ const App = props => {
                   <Route
                     path={process.env.PUBLIC_URL + "/ourservice"}
                     component={OurService}
-                  />
-                  <Route
+                  /> */}
+                  {/* <Route
                     path={process.env.PUBLIC_URL + "/servicelist"}
                     component={ServiceList}
                   />
@@ -908,8 +897,8 @@ const App = props => {
                   <Route
                     path={process.env.PUBLIC_URL + "/waitingpagevideo"}
                     component={WaitingPagevideo}
-                  />
-                  <Route
+                  /> */}
+                  {/* <Route
                     path={process.env.PUBLIC_URL + "/autosearch"}
                     component={AutoSearch}
                   />
@@ -952,12 +941,12 @@ const App = props => {
                   <Route
                     path={process.env.PUBLIC_URL + "/chatlist"}
                     component={ChatList}
-                  />
+                  /> */}
                   {/* <Route
                     path={process.env.PUBLIC_URL + "/messageHistrory"}
                     component={MessageHistrory}
                   /> */}
-                  <Route
+                  {/* <Route
                     path={process.env.PUBLIC_URL + "/chatApp"}
                     component={ChatApp}
                   />
@@ -972,7 +961,7 @@ const App = props => {
                   <Route
                     path={process.env.PUBLIC_URL + "/kundalimatchlist"}
                     component={KundaliMatchList}
-                  />
+                  /> */}
                   {/* Other pages */}
                   <Route
                     path={process.env.PUBLIC_URL + "/about"}
@@ -986,7 +975,7 @@ const App = props => {
                     path={process.env.PUBLIC_URL + "/faqPage"}
                     component={faqPage}
                   />
-                  <Route
+                  {/* <Route
                     path={process.env.PUBLIC_URL + "/privacyPolicy"}
                     component={privacyPolicy}
                   />
@@ -997,7 +986,7 @@ const App = props => {
                   <Route
                     path={process.env.PUBLIC_URL + "/login-register"}
                     component={LoginRegister}
-                  />
+                  /> */}
                   <Route
                     path={process.env.PUBLIC_URL + "/Password"}
                     component={Password}
@@ -1010,15 +999,15 @@ const App = props => {
                     path={process.env.PUBLIC_URL + "/ForgotPassword"}
                     component={ForgotPassword}
                   />
-                  <Route
+                  {/* <Route
                     path={process.env.PUBLIC_URL + "/otpverify"}
                     component={OtpVerify}
                   />
                   <Route
                     path={process.env.PUBLIC_URL + "/registerastro"}
                     component={RegisterAstro}
-                  />
-                  <Route
+                  /> */}
+                  {/* <Route
                     path={process.env.PUBLIC_URL + "/completeproastro"}
                     component={CompleteProAstro}
                   />
@@ -1029,17 +1018,17 @@ const App = props => {
                   <Route
                     path={process.env.PUBLIC_URL + "/democall"}
                     component={DemoCall}
-                  />
-                  <Route
+                  /> */}
+                  {/* <Route
                     path={process.env.PUBLIC_URL + "/step"}
                     component={Step}
                   />
                   <Route
                     path={process.env.PUBLIC_URL + "/Phone"}
                     component={Phone}
-                  />
+                  /> */}
                   {/* // zegocloud // */}
-                  <Route
+                  {/* <Route
                     path={process.env.PUBLIC_URL + "/livevideo"}
                     component={LiveVideo}
                   />
@@ -1055,20 +1044,20 @@ const App = props => {
                   <Route
                     path={process.env.PUBLIC_URL + "/call"}
                     component={Call}
-                  />
+                  /> */}
                   {/* <Route
                   path={process.env.PUBLIC_URL + "/cart"}
                   component={Cart}
                 /> */}
-                  <Route
+                  {/* <Route
                     path={process.env.PUBLIC_URL + "/Otp"}
                     component={Otp}
-                  />
+                  /> */}
                   <Route
                     render={() =>
                       localStorage.getItem("auth-token") ? (
                         <>
-                          <Route
+                          {/* <Route
                             path={process.env.PUBLIC_URL + "/cart"}
                             component={Cart}
                           />
@@ -1080,7 +1069,7 @@ const App = props => {
                           <Route
                             path={process.env.PUBLIC_URL + "/checkout"}
                             component={Checkout}
-                          />
+                          /> */}
                         </>
                       ) : (
                         <Redirect
@@ -1093,10 +1082,10 @@ const App = props => {
                   path={process.env.PUBLIC_URL + "/wishlist"}
                   component={Wishlist}
                 /> */}
-                  <Route
+                  {/* <Route
                     path={process.env.PUBLIC_URL + "/compare"}
                     component={Compare}
-                  />
+                  /> */}
                   {/* <Route
                   path={process.env.PUBLIC_URL + "/checkout"}
                   component={Checkout}

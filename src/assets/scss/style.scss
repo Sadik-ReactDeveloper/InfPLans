@@ -253,10 +253,26 @@ select.form-control.form-select {
   position: relative;
   opacity: 0.99;
   padding: 10px 20px;
-
-  // height: 300px;
 }
-
+#home-testimonial-section li {
+  color: #fff;
+}
+#plans-section-2 h4 {
+  font-size: 14px;
+  font-weight: 700;
+}
+.plan-container {
+  box-shadow: 0 0 12px 0 #ddd;
+  padding: 50px 50px 40px;
+}
+.UlList li:before {
+  content: "\2713";
+  padding: 1px 8px 1px 15px;
+  color: #00b67a;
+  position: absolute;
+  left: 426px;
+  font-weight: 800;
+}
 .members-producers-column {
   padding: 30px 85px;
   box-shadow: 0 4px 26px 0 #ddd;
@@ -264,9 +280,7 @@ select.form-control.form-select {
 .ClientSay {
   padding: 30px 85px;
 }
-li {
-  color: #fff;
-}
+
 #sliderSection {
   background: #5eacee;
   margin: 50px 0;
@@ -289,6 +303,64 @@ section#home-testimonial-section {
   font-size: 40px;
 }
 // Insurance closed
+
+// Plan section open
+#plans-section-1 {
+  padding-top: 100px;
+}
+section .sectionPart {
+  padding: 50px 0;
+  min-height: 300px;
+}
+
+#plans-section-1 .plans-container {
+  box-shadow: 0 0 12px 0 #ddd;
+  background: #fff;
+  padding: 50px 50px 40px;
+}
+.text-blue,
+a {
+  color: #252362;
+}
+#plans-section-1 h2 {
+  font-weight: 500;
+}
+
+#plans-section-2 .plans-title {
+  font-size: 30px;
+  font-weight: 500;
+}
+#plans-section-2 .plan-btn {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  background: #252362;
+  border: 2px solid #252362;
+  color: #fff;
+  padding: 5px 30px;
+  border-radius: 50px;
+  transition: 0.5s;
+  font-size: 16px;
+  margin-top: 0;
+}
+#plans-section-2 .get-btn {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  border: 2px solid #252362;
+  padding: 5px 30px;
+  border-radius: 50px;
+  transition: 0.5s;
+  font-size: 16px;
+  margin-top: 15px;
+}
+#plans-section-2 .plans-logo {
+  max-width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+}
+// Plan section Closed
 .footer-title {
   padding-top: 10px;
 }
@@ -319,29 +391,29 @@ button.swiper-button-prev.ht-swiper-button-nav.gt-1 {
 }
 
 // liveastropage css
-.liveimg img {
-  width: 100%;
-  border-radius: 13px;
-}
-.ast-list {
-  position: relative;
-  margin-bottom: 20px;
-}
-.astrologerName {
-  color: #fff;
-  text-align: center;
-}
-.livecont {
-  position: absolute;
-  bottom: 0;
-  padding: 10px;
-  width: 100%;
-}
-.livecont span h3 {
-  font-size: 18px;
-  font-weight: 600;
-  margin-top: 12px;
-}
+// .liveimg img {
+//   width: 100%;
+//   border-radius: 13px;
+// }
+// .ast-list {
+//   position: relative;
+//   margin-bottom: 20px;
+// }
+// .astrologerName {
+//   color: #fff;
+//   text-align: center;
+// }
+// .livecont {
+//   position: absolute;
+//   bottom: 0;
+//   padding: 10px;
+//   width: 100%;
+// }
+// .livecont span h3 {
+//   font-size: 18px;
+//   font-weight: 600;
+//   margin-top: 12px;
+// }
 .zoom-in-zoom-out {
   margin: 0px;
   width: 15px;
@@ -1247,21 +1319,21 @@ i.fa-hand-o-right.md-i {
 .st-tab {
   padding: 20px 0px;
 }
-.st-tab ul li {
-  display: inline-block;
-  width: 89px;
-  margin: 4px;
-  background: #ff9800;
-  color: #fff;
-  border-radius: 5px;
-  text-align: center;
-  padding: 5px;
-}
+// .st-tab ul li {
+//   display: inline-block;
+//   width: 89px;
+//   margin: 4px;
+//   background: #ff9800;
+//   color: #fff;
+//   border-radius: 5px;
+//   text-align: center;
+//   padding: 5px;
+// }
 
-.st-tab ul li a {
-  color: #fff;
-  font-weight: 700;
-}
+// .st-tab ul li a {
+//   color: #fff;
+//   font-weight: 700;
+// }
 
 // alertpage css
 .wrap-1 {

@@ -114,14 +114,12 @@ const FooterOne = ({
                         );
                       })} */}
                       <li className="">
-                        {/* <Link to={process.env.PUBLIC_URL + "/zodicPage"}>
-                          {item.title}
-                        </Link> */}
-
                         <Link>Home</Link>
                       </li>
                       <li>
-                        <Link>Plans</Link>
+                        <Link to={process.env.PUBLIC_URL + "/inf-plan"}>
+                          Plans
+                        </Link>
                       </li>
                       <li>
                         <Link>Apply</Link>
