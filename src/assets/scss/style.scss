@@ -505,6 +505,29 @@ button.next-btn {
   cursor: pointer;
 }
 // extend closed
+
+// elite Network Plan open
+section#elite-section1 {
+  padding-top: 100px;
+}
+a.read-more {
+  color: #252362;
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+#elite-section2 {
+  background: #252362;
+  margin: 100px 0px;
+  color: #fff;
+}
+#elite-section2 h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+}
+// elite Network Plan closed
 .footer-title {
   padding-top: 10px;
 }

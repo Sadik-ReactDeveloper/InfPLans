@@ -87,7 +87,7 @@ const NavMenu = ({ strings, menuWhiteClass, sidebarMenu }) => {
             <Link to="#">Plans</Link>
             <ul className="submenu">
               <li className="">
-                <Link to={process.env.PUBLIC_URL + "/manglikdosh"}>
+                <Link to={process.env.PUBLIC_URL + "/elite-network"}>
                   INF Elite
                 </Link>
               </li>
