@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import classnames from "classnames";
 import { FaCheck } from "react-icons/fa";
-import LayoutOne from "../../layouts/LayoutOne";
+import LayoutOne from "../../../../layouts/LayoutOne";
 import planLeftImg from "../../assets/imgs/plans/elite-network-img.png";
 import planRighttImg from "../../assets/imgs/plans/inf-logo.png";
 import premier from "../../assets/imgs/plans/premier-img.png";
 import travelImg from "../../assets/imgs/plans/travel-img.png";
 import standardImg from "../../assets/imgs/plans/standard-img.png";
 // import HeroSliderTwentyNineSingle from "../../components/hero-slider/HeroSliderTwentyNineSingle.js";
-import axiosConfig from "../../axiosConfig";
+import axiosConfig from "../../../../axiosConfig";
 import {
   Button,
   Card,
@@ -187,7 +187,7 @@ const InfPlan = () => {
                           <img src={planRighttImg} alt="right" />
                         </div>
                         <p className="text-center plans-title">Elite Network</p>
-                        <button className=" plan-btn">Plan Details</button>
+                        <button className="plan-btn">Plan Details</button>
                         <a href="#">
                           <button className=" get-btn">Get a Quate</button>
                         </a>
@@ -364,11 +364,11 @@ const InfPlan = () => {
             </div>
           </section>
 
-          <section id=" plans-section-7">
+          <section id="plans-section-2">
             <div className="container">
               <div className="row">
                 <div className="col-lg-12">
-                  <div className="plan-container ">
+                  <div className="plan-container">
                     <div className="row">
                       <div className="box"></div>
                       <div className="col-lg-3">
@@ -424,9 +424,9 @@ const InfPlan = () => {
                           <img src={planRighttImg} alt="right" />
                         </div>
                         <p className="text-center plans-title">Standard</p>
-                        <button className=" plan-btn">Plan Details</button>
+                        <button className="plan-btn">Plan Details</button>
                         <a href="#">
-                          <button className=" get-btn">Get a Quate</button>
+                          <button className="get-btn">Get a Quate</button>
                         </a>
                       </div>
                     </div>

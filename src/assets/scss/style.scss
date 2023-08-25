@@ -361,8 +361,7 @@ a {
   margin-top: 30px;
 }
 li.nav-item {
-  width: 33%;
-  /* border-top: 2px solid black; */
+  width: 25%;
 }
 
 // Plan section Closed
@@ -376,7 +375,6 @@ a.TabBmi.nav-link {
   border: 0;
   font-size: 25px;
   padding: 15px 50px;
-  // border-top: 10px solid;
 }
 a.active .nav-link {
   border-top: 10px solid;
@@ -388,16 +386,11 @@ ul.tabList {
   padding-left: 30px;
 }
 li.disc {
-  // list-style: disc;
   padding: 10px 0;
-  // margin-left: 50px;
 }
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
   border-top: 10px solid #000;
-  // color: #60435f;
-  /* background-color: var(--bs-nav-tabs-link-active-bg); */
-  /* border-color: var(--bs-nav-tabs-link-active-border-color); */
 }
 .bmi-plans-tab section div ul {
   line-height: 2;
@@ -405,17 +398,6 @@ li.disc {
   text-align: left;
   padding-left: 30px;
 }
-// #plans-section-7 .bmi-bg {
-//   background-color: #f2f2f2;
-//   padding: 20px 0 10px;
-//   width: 85%;
-//   margin: 0 auto 30px;
-//   border: 1px solid #c4c4c4;
-// }
-
-// .text-center.bmi-bg {
-//   padding: 15px 25px;
-// }
 
 #centerDiv p {
   font-weight: 400;
@@ -435,13 +417,94 @@ a {
   padding-top: 20px;
 }
 // after tab pane closed
+
+// apply open
+h1 {
+  color: #252362;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 38px;
+  line-height: 42px;
+  font-weight: 500;
+}
+#headList h4 {
+  font-size: 22px;
+  font-weight: normal;
+  text-align: center;
+  color: #000;
+  line-height: 1.5;
+}
+#headList p {
+  margin: 0 20px;
+}
+p {
+  font-size: 16px;
+  color: #000;
+  line-height: 1.5;
+}
+
 #centerDiv .bmi-plans-tab {
   background-color: #f2f2f2;
-  padding: 20px 0 10px;
+  padding: 60px 0 10px;
   width: 85%;
   margin: 0 auto 30px;
   border: 1px solid #c4c4c4;
 }
+
+#centerDiv .bmi-apply-tab {
+  background-color: #f2f2f2;
+  padding: 20px 0 10px;
+  width: 85%;
+  margin: 0 auto 30px;
+  // border: 1px solid #c4c4c4;
+}
+
+a.TabBmiApply.nav-link {
+  background: #fff;
+  color: #000;
+  position: relative;
+  font-weight: 600;
+  margin-top: -9px;
+  border: 0;
+  font-size: 15px;
+  padding: 15px 50px;
+}
+#centerDiv .bmi-list-tab {
+  // background-color: #f2f2f2;
+  padding: 60px 0 10px;
+
+  margin: 0 auto 30px;
+  // border: 1px solid #c4c4c4;
+}
+// li.nav-item {
+//   width: 50%;
+// }
+// apply closed
+
+// extend open
+
+section#extend {
+  margin: 150px;
+  // border: 2px solid #000;
+  box-shadow: 0 0 6px #a99e9e;
+}
+.login-container {
+  padding: 30px 50px 35px 50px;
+}
+.Extend-Content {
+  padding-top: 20px;
+}
+button.next-btn {
+  margin: 10px 5px;
+  width: 100%;
+  border-radius: 50px;
+  padding: 10px 0;
+  background: #7da9da;
+  border-color: inherit;
+  font-weight: 300;
+  cursor: pointer;
+}
+// extend closed
 .footer-title {
   padding-top: 10px;
 }
@@ -524,12 +587,12 @@ button.swiper-button-prev.ht-swiper-button-nav.gt-1 {
 
 //liveastropage css close
 
-h1,
-.h1 {
-  font-size: 25px;
-  line-height: 42px;
-  font-weight: 700;
-}
+// h1,
+// .h1 {
+//   font-size: 25px;
+//   line-height: 42px;
+//   font-weight: 700;
+// }
 
 @keyframes spin {
   from {
@@ -641,23 +704,23 @@ h3.stltext {
     font-weight: 500;
     margin-top: 10px;
   }
-  p {
-    font-size: 16px;
-    margin-top: 4px;
-    margin-bottom: 15px;
-  }
+  // p {
+  //   font-size: 16px;
+  //   margin-top: 4px;
+  //   margin-bottom: 15px;
+  // }
 }
 
-.bx-1:hover {
-  background: #ffcc01;
+// .bx-1:hover {
+//   background: #ffcc01;
 
-  h5 {
-    color: #fff;
-  }
-  p {
-    color: #fff;
-  }
-}
+//   h5 {
+//     color: #fff;
+//   }
+//   // p {
+//   //   color: #fff;
+//   // }
+// }
 
 .statusonline {
   display: inline-block;
@@ -752,9 +815,9 @@ h3.s-tt {
 .ab-img {
   width: 100%;
 }
-p.ptext {
-  padding: 0 180px;
-}
+// p.ptext {
+//   padding: 0 180px;
+// }
 
 // aboutdeatilpage css
 .ourm {
@@ -765,10 +828,10 @@ p.ptext {
     color: #ffcc01;
     font-weight: 700;
   }
-  p {
-    color: #fff;
-    font-weight: bold;
-  }
+  // p {
+  //   color: #fff;
+  //   font-weight: bold;
+  // }
 }
 
 .as-content ul {
@@ -937,11 +1000,11 @@ a {
     font-size: 30px;
     font-weight: 600;
   }
-  p {
-    font-size: 32px;
-    font-weight: 600;
-    margin-top: 30px;
-  }
+  // p {
+  //   font-size: 32px;
+  //   font-weight: 600;
+  //   margin-top: 30px;
+  // }
 }
 
 .scope-img {
@@ -971,13 +1034,13 @@ a {
   font-size: 17px !important;
   font-weight: 600;
 }
-.scope-text {
-  p {
-    margin-bottom: 0px;
-    overflow-y: hidden;
-    height: 120px;
-  }
-}
+// .scope-text {
+//   p {
+//     margin-bottom: 0px;
+//     overflow-y: hidden;
+//     height: 120px;
+//   }
+// }
 .scope-1 {
   padding: 60px 0px;
 }
@@ -1020,11 +1083,11 @@ span.scope-sp {
     margin-bottom: 0px;
     line-height: 22px;
   }
-  p {
-    font-size: 13px;
-    font-weight: 200;
-    line-height: 18px;
-  }
+  // p {
+  //   font-size: 13px;
+  //   font-weight: 200;
+  //   line-height: 18px;
+  // }
   img {
     border-radius: 5px;
   }
@@ -1306,10 +1369,10 @@ img.imgser2 {
     margin-bottom: 15px;
     margin-top: 20px;
   }
-  p {
-    font-size: 13px;
-    font-weight: 400;
-  }
+  // p {
+  //   font-size: 13px;
+  //   font-weight: 400;
+  // }
   a {
     font-size: 16px;
     font-weight: 500;
@@ -1432,14 +1495,14 @@ i.fa-hand-o-right.md-i {
   border-radius: 10px;
   margin-top: 30px;
 
-  h1 {
-    font-size: 72px;
-    letter-spacing: 3px;
-    font-weight: 600;
-    color: #ff9800;
-    margin: 0;
-    margin-bottom: 20px;
-  }
+  // h1 {
+  //   font-size: 72px;
+  //   letter-spacing: 3px;
+  //   font-weight: 600;
+  //   color: #ff9800;
+  //   margin: 0;
+  //   margin-bottom: 20px;
+  // }
 
   p {
     font-size: 20px;
@@ -2156,17 +2219,17 @@ iframe {
   // border: none;
   // z-index: 2147483647;
 }
-.timer {
-  display: flex;
-  justify-content: center;
-}
+// .timer {
+//   display: flex;
+//   justify-content: center;
+// }
 
-h4.dosh {
-  border-bottom: 2px solid#ffcc01;
-  width: fit-content;
-  padding-bottom: 5px;
-  margin-bottom: 15px;
-}
+// h4.dosh {
+//   border-bottom: 2px solid#ffcc01;
+//   width: fit-content;
+//   padding-bottom: 5px;
+//   margin-bottom: 15px;
+// }
 //LalKitab
 p.tableL {
   background: #ffcc01;

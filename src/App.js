@@ -40,7 +40,13 @@ const ShopListTwoColumn = lazy(() => import("./pages/shop/ShopListTwoColumn"));
 
 // INF PLans
 
-const InfPlans = lazy(() => import("./components/plans/InfPlans"));
+const InfPlans = lazy(() => import("./components/pages/plans/InfPlans"));
+const EliteNetwork = lazy(() =>
+  import("./components/pages/plans/EliteNetwork")
+);
+const Apply = lazy(() => import("./components/pages/apply/ApplyList"));
+const Extend = lazy(() => import("./components/pages/extend/Extend"));
+
 // product pages
 const Product = lazy(() => import("./pages/shop-product/Product"));
 const ProductTabLeft = lazy(() =>
@@ -512,10 +518,23 @@ const App = props => {
                     path={process.env.PUBLIC_URL + "/product-fixed-image/:id"}
                     component={ProductFixedImage}
                   />
-                  {/* Blog pages */}
+                  {/* Our plans */}
                   <Route
                     path={process.env.PUBLIC_URL + "/inf-plan"}
                     component={InfPlans}
+                  />
+                  <Route
+                    path={process.env.PUBLIC_URL + "/elite-network"}
+                    component={EliteNetwork}
+                  />
+
+                  <Route
+                    path={process.env.PUBLIC_URL + "/apply"}
+                    component={Apply}
+                  />
+                  <Route
+                    path={process.env.PUBLIC_URL + "/extend"}
+                    component={Extend}
                   />
                   <Route
                     path={process.env.PUBLIC_URL + "/blog-standard/:id"}

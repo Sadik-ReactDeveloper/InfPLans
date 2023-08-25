@@ -122,10 +122,14 @@ const FooterOne = ({
                         </Link>
                       </li>
                       <li>
-                        <Link>Apply</Link>
+                        <Link to={process.env.PUBLIC_URL + "/apply"}>
+                          Apply
+                        </Link>
                       </li>
                       <li>
-                        <Link>Extend</Link>
+                        <Link to={process.env.PUBLIC_URL + "/extend"}>
+                          Extend
+                        </Link>
                       </li>
                     </ul>
                   </li>
@@ -161,9 +165,7 @@ const FooterOne = ({
                   <li>
                     <ul className="submenu">
                       <li className="">
-                        <Link
-                        // to={process.env.PUBLIC_URL + "/luckyGemstone"}
-                        >
+                        <Link to={process.env.PUBLIC_URL + "/elite-network"}>
                           Elite Network
                         </Link>
                       </li>
