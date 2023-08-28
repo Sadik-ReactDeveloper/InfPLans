@@ -41,12 +41,14 @@ const NavMenu = ({ strings, menuWhiteClass, sidebarMenu }) => {
             <Link to="#">Quote</Link>
             <ul className="submenu">
               <li className="">
-                <Link to={process.env.PUBLIC_URL + "/manglikdosh"}>
+                <Link to={process.env.PUBLIC_URL + "/visitors - quote"}>
                   Get a Quote
                 </Link>
               </li>
               <li className="">
-                <Link to={process.env.PUBLIC_URL + "/pitraDosh"}>Premiums</Link>
+                <Link to={process.env.PUBLIC_URL + "/inf-easy-select"}>
+                  Premiums
+                </Link>
               </li>
             </ul>
           </li>

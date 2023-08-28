@@ -318,8 +318,7 @@ section .sectionPart {
   background: #fff;
   padding: 50px 50px 40px;
 }
-.text-blue,
-a {
+#elite-section1.text-blue {
   color: #252362;
 }
 #plans-section-1 h2 {
@@ -508,7 +507,7 @@ button.next-btn {
 
 // elite Network Plan open
 section#elite-section1 {
-  padding-top: 100px;
+  padding-top: 50px;
 }
 a.read-more {
   color: #252362;
@@ -522,10 +521,20 @@ a.read-more {
   margin: 100px 0px;
   color: #fff;
 }
+#elite-section2 li {
+  line-height: 2;
+}
 #elite-section2 h3 {
   font-size: 20px;
   font-weight: 600;
   color: #fff;
+}
+section#elite-section1 h2 {
+  font-weight: 500;
+}
+.elite-container {
+  box-shadow: 0 0 12px 0 #ddd;
+  padding: 50px 50px 40px;
 }
 // elite Network Plan closed
 .footer-title {

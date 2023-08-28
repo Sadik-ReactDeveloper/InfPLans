@@ -11,10 +11,6 @@ import standardImg from "../../../assets/imgs/plans/standard-img.png";
 import axiosConfig from "../../../axiosConfig";
 import {
   Button,
-  Card,
-  CardBody,
-  CardText,
-  CardTitle,
   Col,
   Nav,
   NavItem,

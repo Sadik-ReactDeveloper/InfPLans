@@ -46,6 +46,8 @@ const EliteNetwork = lazy(() =>
 );
 const Apply = lazy(() => import("./components/pages/apply/ApplyList"));
 const Extend = lazy(() => import("./components/pages/extend/Extend"));
+const GetQuote = lazy(() => import("./components/pages/quotes/GetQuote"));
+const EasySelect = lazy(() => import("./components/pages/quotes/EasySelect"));
 
 // product pages
 const Product = lazy(() => import("./pages/shop-product/Product"));
@@ -418,7 +420,6 @@ const App = props => {
                     path={process.env.PUBLIC_URL + "/"}
                     component={HomeFurnitureTwo}
                   />
-
                   {/* astologo route  */}
                   {/* <Route
                     path={process.env.PUBLIC_URL + "/homecategory"}
@@ -527,7 +528,6 @@ const App = props => {
                     path={process.env.PUBLIC_URL + "/elite-network"}
                     component={EliteNetwork}
                   />
-
                   <Route
                     path={process.env.PUBLIC_URL + "/apply"}
                     component={Apply}
@@ -535,6 +535,14 @@ const App = props => {
                   <Route
                     path={process.env.PUBLIC_URL + "/extend"}
                     component={Extend}
+                  />
+                  <Route
+                    path={process.env.PUBLIC_URL + "/visitors - quote"}
+                    component={GetQuote}
+                  />
+                  <Route
+                    path={process.env.PUBLIC_URL + "/inf-easy-select"}
+                    component={EasySelect}
                   />
                   <Route
                     path={process.env.PUBLIC_URL + "/blog-standard/:id"}
