@@ -199,7 +199,7 @@ export default function EasySelect() {
                 <div className="row">
                   <div className="col-lg-12">
                     <div className="quote-container">
-                      <h2 className="text-center text-blue">
+                      <h2 className="text-center text-blue py-3">
                         Direct billing via 24/7/365 Medical Concierge
                       </h2>
                       <p className="text-black">

@@ -67,7 +67,7 @@ export default function ApplyList() {
                                   })}
                                   onClick={() => toggle("1")}
                                 >
-                                  Select Plan
+                                  <span> Select Plan</span>
                                 </NavLink>
                               </div>
                             </NavItem>
@@ -82,7 +82,7 @@ export default function ApplyList() {
                                     toggle("2");
                                   }}
                                 >
-                                  VISITOR INFORMATION
+                                  <span> VISITOR INFORMATION</span>
                                 </NavLink>
                               </div>
                             </NavItem>
@@ -97,7 +97,7 @@ export default function ApplyList() {
                                     toggle("3");
                                   }}
                                 >
-                                  DEPENTAND DETAILS
+                                  <span> DEPENTAND DETAILS</span>
                                 </NavLink>
                               </div>
                             </NavItem>
