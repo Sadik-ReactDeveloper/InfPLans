@@ -27,6 +27,7 @@ const HeroSliderTwentyNine = () => {
       area,
       email,
     };
+    localStorage.setItem("user_searchquery", JSON.stringify(payload));
     axiosConfig
       .post(`/user/quote`, payload)
       .then(response => {
