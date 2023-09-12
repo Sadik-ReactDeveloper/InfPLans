@@ -17,7 +17,7 @@ const HeroSliderTwentyNine = () => {
     const today = new Date().toISOString().split("T")[0];
     return today;
   };
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const payload = {
       fromDate,
@@ -27,13 +27,14 @@ const HeroSliderTwentyNine = () => {
       area,
       email,
     };
+    localStorage.setItem("user_searchquery", JSON.stringify(payload));
     axiosConfig
       .post(`/user/quote`, payload)
-      .then(response => {
+      .then((response) => {
         setIsData(!isData);
         console.log(response.data);
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   };
@@ -59,7 +60,7 @@ const HeroSliderTwentyNine = () => {
             {isData === false ? (
               <>
                 <div className="container">
-                  <Form onSubmit={e => handleSubmit(e)}>
+                  <Form onSubmit={(e) => handleSubmit(e)}>
                     <div className="row">
                       <div className="get-a-quote-container row py-2">
                         <div className="form-group col-md-3 col-xs-12 qelement">
@@ -74,7 +75,9 @@ const HeroSliderTwentyNine = () => {
                                     value={fromDate}
                                     min={maxDate()}
                                     className="dropped"
-                                    onChange={e => setFromDate(e.target.value)}
+                                    onChange={(e) =>
+                                      setFromDate(e.target.value)
+                                    }
                                   />
                                 </div>
                                 <div className="col-md-6 col-lg-6 pl-0 start-date-title ">
@@ -85,7 +88,7 @@ const HeroSliderTwentyNine = () => {
                                     value={toDate}
                                     min={maxDate()}
                                     className="dropped "
-                                    onChange={e => setToDate(e.target.value)}
+                                    onChange={(e) => setToDate(e.target.value)}
                                   />
                                 </div>
                               </div>
@@ -109,7 +112,7 @@ const HeroSliderTwentyNine = () => {
                                 type="select"
                                 name="allPlan"
                                 value={area}
-                                onChange={e => setArea(e.target.value)}
+                                onChange={(e) => setArea(e.target.value)}
                               >
                                 <option value="" disabled>
                                   Coverage Area
@@ -130,7 +133,7 @@ const HeroSliderTwentyNine = () => {
                                 type="select"
                                 name="allPlan"
                                 value={maximum}
-                                onChange={e => setMaximum(e.target.value)}
+                                onChange={(e) => setMaximum(e.target.value)}
                               >
                                 <option value="Below $5,000,000">
                                   Below $5,000,000
@@ -150,7 +153,7 @@ const HeroSliderTwentyNine = () => {
                             value={dateOfBirth}
                             max={maxDate()}
                             className="dropped "
-                            onChange={e => setDateOfBirth(e.target.value)}
+                            onChange={(e) => setDateOfBirth(e.target.value)}
                           />
                         </div>
                       </div>
@@ -168,7 +171,7 @@ const HeroSliderTwentyNine = () => {
                             name="email"
                             value={email}
                             className="EmailInput"
-                            onChange={e => setEmail(e.target.value)}
+                            onChange={(e) => setEmail(e.target.value)}
                           />
                         </div>
                         <div className="col-md-3">
