@@ -78,21 +78,21 @@ export default function EasySelect() {
         id="home-hero-section-background"
       >
         <div>
-          <h1 className="text-center">
+          <h1 className="text-center heading text-white">
             GET A VISITORS INSURANCE QUOTE FOR WORLDWIDE TRAVEL
           </h1>
-          <p className="text-center">
+          <p className="text-center ">
             The plans may cover medically necessary testing for COVID-19 in
             accordance with the plan terms, conditions and exclusions, while the
             person is in the US.
           </p>
-          <p className="text-center">
+          <p className="text-center ">
             INF and HOP Assist Plans are not available to US residents and are
             only available to non-US residents
           </p>
         </div>
       </section>
-      <section>
+      <section style={{ padding: "0px" }}>
         <div className="container my-5">
           <div className="row">
             {isData === false ? (

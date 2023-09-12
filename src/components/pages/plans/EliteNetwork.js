@@ -33,22 +33,22 @@ export default function EliteNetwork() {
   const [ViewOnePlan, setViewOnePlan] = useState({});
 
   const params = useParams();
-  const toggle = (tab) => {
+  const toggle = tab => {
     if (currentActiveTab !== tab) setCurrentActiveTab(tab);
   };
-  const networkFunc = (ele) => {
+  const networkFunc = ele => {
     if (network !== ele) setNetwork(ele);
   };
   useEffect(() => {
     // console.log(params.id);
     axiosConfig
       .get(`/user/getOnePlan/${params.id}`)
-      .then((response) => {
+      .then(response => {
         console.log(response?.data?.data?.Plan);
         setViewOnePlan(response?.data?.data?.Plan);
         // setCategoryList(response?.data);
       })
-      .catch((error) => {
+      .catch(error => {
         console.log(error);
       });
   }, [params.id]);
@@ -64,7 +64,7 @@ export default function EliteNetwork() {
                   <div className="col-lg-12">
                     {/* <div> */}
                     <h2 className="text-center text-blue">
-                      What is the {ViewOnePlan && ViewOnePlan?.planName}{" "}
+                      What is the {ViewOnePlan && ViewOnePlan?.planName}
                       International Visitor Accident & Sickness Insurance
                       (IVAS)?
                     </h2>
