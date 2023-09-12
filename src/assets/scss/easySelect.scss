@@ -114,9 +114,17 @@ ul.center-block li {
   padding: 0 0 0 40px;
 }
 ul.center-block {
+  position: relative;
   display: block;
   margin-right: auto;
   margin-left: auto;
+}
+::placeholder {
+  height: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #252362;
+  padding: 10px;
 }
 
 .center-block li:before {
@@ -124,7 +132,7 @@ ul.center-block {
   padding: 1px 8px 1px 15px;
   color: green;
   position: absolute;
-  left: 112px;
+  left: 9px;;
   font-weight: 900;
 }
 .para {
