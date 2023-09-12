@@ -12,7 +12,7 @@ import { ToastProvider } from "react-toast-notifications";
 import { multilanguage, loadLanguages } from "redux-multilanguage";
 import { connect } from "react-redux";
 import { BreadcrumbsProvider } from "react-breadcrumbs-dynamic";
-import TermsOfUse from "./wrappers/myPage/TermsOfUse";
+// import TermsOfUse from "./wrappers/myPage/TermsOfUse";
 import {} from "react";
 import { history } from "./history";
 
@@ -537,7 +537,7 @@ const App = props => {
                     component={Extend}
                   />
                   <Route
-                    path={process.env.PUBLIC_URL + "/visitors - quote"}
+                    path={process.env.PUBLIC_URL + "/visitors-quote"}
                     component={GetQuote}
                   />
                   <Route

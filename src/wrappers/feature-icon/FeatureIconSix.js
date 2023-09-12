@@ -38,7 +38,7 @@ const FeatureIconSix = ({ spaceTopClass, spaceBottomClass }) => {
                 <a hre="#">
                   <div className="what-describes-you-icon">
                     <img src={greenCard} alt="greenCard" />
-                    <p>Student or Scholar on J-1 F-1 M-1, Or Q-1 Visa</p>
+                    <p>INF Visitor Insurance and Travel Assist Plans</p>
                   </div>
                 </a>
               </div>
@@ -48,7 +48,10 @@ const FeatureIconSix = ({ spaceTopClass, spaceBottomClass }) => {
                 <a href="#">
                   <div className="what-describes-you-icon">
                     <img src={student} alt="student" />
-                    <p className="column-title">Non-US Residents</p>
+                    {/* <p className="column-title">Non-US Residents</p> */}
+                    <p className="column-title">
+                      Student or Scholar on J-1 F-1 M-1, Or Q-1 Visa
+                    </p>
                   </div>
                 </a>
               </div>
@@ -56,9 +59,7 @@ const FeatureIconSix = ({ spaceTopClass, spaceBottomClass }) => {
                 <a hre="#">
                   <div className="what-describes-you-icon">
                     <img src={permanent} alt="permanent" />
-                    <p className="column-title">
-                      Student or Scholar on J-1 F-1 M-1, Or Q-1 Visa
-                    </p>
+                    <p className="column-title">Travel Assist Plans</p>
                   </div>
                 </a>
               </div>

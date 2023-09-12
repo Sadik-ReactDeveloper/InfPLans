@@ -1,40 +1,41 @@
 import React, { useEffect, useState } from "react";
-
+import "../../assets/scss/_infPlan.scss";
+import { Form } from "reactstrap";
 // import HeroSliderTwentyNineSingle from "../../components/hero-slider/HeroSliderTwentyNineSingle.js";
 import axiosConfig from "../../axiosConfig";
+import Filters from "../../components/pages/quotes/FilterDataList";
 const HeroSliderTwentyNine = () => {
-  // const [sliderData, setSliderData] = useState([]);
+  const [fromDate, setFromDate] = useState("");
+  const [toDate, setToDate] = useState("");
+  const [dateOfBirth, setDateOfBirth] = useState("");
+  const [maximum, setMaximum] = useState("");
+  const [area, setArea] = useState("");
+  const [email, setEmail] = useState("");
+  const [isData, setIsData] = useState(false);
 
-  // useEffect(() => {
-  //   axiosConfig
-  //     .get("/admin/getbanner")
-  //     .then(response => {
-  //       setSliderData(response.data.data);
-  //     })
-  //     .catch(error => {
-  //       console.log("error", error);
-  //     });
-  // }, []);
-  const params = {
-    effect: "fade",
-    loop: true,
-    speed: 1000,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
-    watchSlidesVisibility: true,
-
-    renderPrevButton: () => (
-      <button className="swiper-button-prev ht-swiper-button-nav">
-        <i className="pe-7s-angle-left" />
-      </button>
-    ),
-    renderNextButton: () => (
-      <button className="swiper-button-next ht-swiper-button-nav">
-        <i className="pe-7s-angle-right" />
-      </button>
-    ),
+  const maxDate = () => {
+    const today = new Date().toISOString().split("T")[0];
+    return today;
+  };
+  const handleSubmit = e => {
+    e.preventDefault();
+    const payload = {
+      fromDate,
+      toDate,
+      dateOfBirth,
+      maximum,
+      area,
+      email,
+    };
+    axiosConfig
+      .post(`/user/quote`, payload)
+      .then(response => {
+        setIsData(!isData);
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
   };
   return (
     <div className="slider-area">
@@ -55,97 +56,141 @@ const HeroSliderTwentyNine = () => {
                 </div>
               </div>
             </div>
-            <div className="container">
-              <div className="row">
-                <div className="get-a-quote-container row py-2">
-                  <div className="form-group col-md-3 col-xs-12 qelement">
-                    <div input-group input-daterange id="cFrom">
-                      <div className="form-row">
-                        <div className="row ">
-                          <div className="col-md-6 col-lg-6 pl-0 start-date-title ">
-                            <lable className="dates">Start Date</lable>
-                            <input
-                              type="date"
-                              name="cqs-date"
-                              className="dropped form-control"
-                            />
+            {isData === false ? (
+              <>
+                <div className="container">
+                  <Form onSubmit={e => handleSubmit(e)}>
+                    <div className="row">
+                      <div className="get-a-quote-container row py-2">
+                        <div className="form-group col-md-3 col-xs-12 qelement">
+                          <div input-group input-daterange id="cFrom">
+                            <div className="form-row">
+                              <div className="row ">
+                                <div className="col-md-6 col-lg-6 pl-0 start-date-title ">
+                                  <lable className="dates">Start Date</lable>
+                                  <input
+                                    type="date"
+                                    // name="cqs-date"
+                                    name="fromDate"
+                                    value={fromDate}
+                                    min={maxDate()}
+                                    className="dropped form-control"
+                                    onChange={e => setFromDate(e.target.value)}
+                                  />
+                                </div>
+                                <div className="col-md-6 col-lg-6 pl-0 start-date-title ">
+                                  <lable className="dates">End Date</lable>
+                                  <input
+                                    type="date"
+                                    // name="cqs-date"
+                                    name="toDate"
+                                    value={toDate}
+                                    max={maxDate()}
+                                    className="dropped form-control"
+                                    // data-toggle="dropdown"
+                                    onChange={e => setToDate(e.target.value)}
+                                  />
+                                </div>
+                              </div>
+                            </div>
                           </div>
-                          <div className="col-md-6 col-lg-6 pl-0 start-date-title ">
-                            <lable className="dates">End Date</lable>
-                            <input
-                              type="date"
-                              name="cqs-date"
-                              className="dropped form-control"
-                              data-toggle="dropdown"
-                            />
-                          </div>
+                        </div>
+
+                        <div className="col-md-5">
+                          <lable className="CoverageArea">Coverage Area</lable>
+
+                          <details className="DetailsDropdown">
+                            <summary>
+                              Coverage (for:International ,Below:)
+                            </summary>
+                            <div className="py-2">
+                              <label>Area:</label>
+                              <select
+                                class="form-control form-select"
+                                aria-label="Default select example"
+                                defaultValue=""
+                                type="select"
+                                name="allPlan"
+                                value={area}
+                                onChange={e => setArea(e.target.value)}
+                              >
+                                <option value="" disabled>
+                                  Coverage Area
+                                </option>
+                                <option value="USA/CANADA/Worldwide">
+                                  USA/CANADA/Worldwide
+                                </option>
+                                <option value="Worldwide Travel">
+                                  Worldwide Travel
+                                </option>
+                              </select>
+                            </div>
+                            <div className="py-2 mt-1">
+                              <label>Maximum:</label>
+                              <select
+                                class="form-control form-select"
+                                aria-label="Default select example"
+                                type="select"
+                                name="allPlan"
+                                value={maximum}
+                                onChange={e => setMaximum(e.target.value)}
+                              >
+                                <option value="Below $5,000,000">
+                                  Below $5,000,000
+                                </option>
+                                <option value="Below $8,000,000">
+                                  Below $8,000,000
+                                </option>
+                              </select>
+                            </div>
+                          </details>
+                        </div>
+                        <div className="col-md-4">
+                          <lable className="dob">DOB</lable>
+                          <input
+                            type="date"
+                            // name="cqs-date"
+                            name="dateOfBirth"
+                            value={dateOfBirth}
+                            max={maxDate()}
+                            className="dropped form-control"
+                            onChange={e => setDateOfBirth(e.target.value)}
+                          />
+                        </div>
+                      </div>
+                      <div
+                        className=" row py-4"
+                        style={{
+                          backgroundColor: "#252362",
+                          justifyContent: "center",
+                        }}
+                      >
+                        <div className="col-md-5 pt-2 col-xs-12 ">
+                          <input
+                            type="email"
+                            placeholder="Email Address"
+                            name="email"
+                            value={email}
+                            className="EmailInput"
+                            onChange={e => setEmail(e.target.value)}
+                          />
+                        </div>
+                        <div className="col-md-3">
+                          <button
+                            className="custombtn2 text-white"
+                            type="submit"
+                          >
+                            Get Quote
+                          </button>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="col-md-5">
-                    <lable className="CoverageArea">Coverage Area</lable>
-
-                    <details className="DetailsDropdown">
-                      <summary>Coverage (for:International ,Below:)</summary>
-                      <div className="py-2">
-                        <label>Area:</label>
-                        <select
-                          class="form-control form-select "
-                          aria-label="Default select example"
-                        >
-                          <option selected value="1">
-                            One
-                          </option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
-                        </select>
-                      </div>
-                      <div className="py-2 mt-1">
-                        <label>Maximum:</label>
-                        <select
-                          class="form-control form-select"
-                          aria-label="Default select example"
-                        >
-                          <option selected value="1">
-                            One
-                          </option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
-                        </select>
-                      </div>
-                    </details>
-                  </div>
-                  <div className="col-md-4">
-                    <lable className="CoverageArea">DOB</lable>
-                    <input
-                      type="date"
-                      name="cqs-date"
-                      className="dropped form-control"
-                    />
-                  </div>
+                  </Form>
                 </div>
-                <div
-                  className=" row py-4"
-                  style={{
-                    backgroundColor: "#252362",
-                    justifyContent: "center",
-                  }}
-                >
-                  <div className="col-md-5 pt-2 col-xs-12 ">
-                    <input
-                      type="email"
-                      placeholder="Email Address"
-                      name="email"
-                      className="EmailInput"
-                    />
-                  </div>
-                  <div className="col-md-3">
-                    <button className="custombtn2 text-white">Get Quote</button>
-                  </div>
-                </div>
-              </div>
-            </div>
+              </>
+            ) : (
+              <Filters />
+            )}
           </div>
         </section>
       </div>

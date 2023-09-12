@@ -9,19 +9,19 @@ import axiosConfig from "../../axiosConfig";
 const NavMenu = ({ strings, menuWhiteClass, sidebarMenu }) => {
   const [category, setCategoryList] = useState([]);
 
-  const getCategory = () => {
-    axiosConfig
-      .get(`/admin/getallCategory`)
-      .then(response => {
-        setCategoryList(response.data.data);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  };
-  useEffect(() => {
-    getCategory();
-  }, []);
+  // const getCategory = () => {
+  //   axiosConfig
+  //     .get(`/admin/getallCategory`)
+  //     .then(response => {
+  //       setCategoryList(response.data.data);
+  //     })
+  //     .catch(error => {
+  //       console.log(error);
+  //     });
+  // };
+  // useEffect(() => {
+  //   getCategory();
+  // }, []);
 
   return (
     <div
@@ -41,7 +41,7 @@ const NavMenu = ({ strings, menuWhiteClass, sidebarMenu }) => {
             <Link to="#">Quote</Link>
             <ul className="submenu">
               <li className="">
-                <Link to={process.env.PUBLIC_URL + "/visitors - quote"}>
+                <Link to={process.env.PUBLIC_URL + "/visitors-quote"}>
                   Get a Quote
                 </Link>
               </li>
