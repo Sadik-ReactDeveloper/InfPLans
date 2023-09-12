@@ -11,20 +11,20 @@ import textbottom from "../../assets/img/textbottom.png";
 import axiosConfig from "../../axiosConfig";
 
 const BlogFeatured = ({ spaceTopClass, spaceBottomClass }) => {
-  const [blogData, setBlogData] = useState([]);
+  // const [blogData, setBlogData] = useState([]);
 
-  useEffect(() => {
-    axiosConfig
-      .get(`/user/active_blog_category`)
-      .then(response => {
-        if (response.data.status === true) {
-          setBlogData(response.data.data);
-        }
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axiosConfig
+  //     .get(`/user/active_blog_category`)
+  //     .then(response => {
+  //       if (response.data.status === true) {
+  //         setBlogData(response.data.data);
+  //       }
+  //     })
+  //     .catch(error => {
+  //       console.log(error);
+  //     });
+  // }, []);
 
   return (
     <div

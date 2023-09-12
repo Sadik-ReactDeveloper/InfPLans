@@ -9,19 +9,20 @@ import axiosConfig from "../../axiosConfig";
 const NavMenu = ({ strings, menuWhiteClass, sidebarMenu }) => {
   const [category, setCategoryList] = useState([]);
 
-  // const getCategory = () => {
-  //   axiosConfig
-  //     .get(`/admin/getallCategory`)
-  //     .then(response => {
-  //       setCategoryList(response.data.data);
-  //     })
-  //     .catch(error => {
-  //       console.log(error);
-  //     });
-  // };
-  // useEffect(() => {
-  //   getCategory();
-  // }, []);
+  const getCategory = () => {
+    axiosConfig
+      .get(`/user/infPlanList`)
+      .then(response => {
+        console.log(response?.data);
+        setCategoryList(response?.data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+  useEffect(() => {
+    getCategory();
+  }, []);
 
   return (
     <div
@@ -88,12 +89,17 @@ const NavMenu = ({ strings, menuWhiteClass, sidebarMenu }) => {
           <li>
             <Link to="#">Plans</Link>
             <ul className="submenu">
-              <li className="">
-                <Link to={process.env.PUBLIC_URL + "/elite-network"}>
-                  INF Elite
-                </Link>
-              </li>
-              <li className="">
+              {category &&
+                category?.map((ele, i) => (
+                  <li key={i} className="">
+                    <Link
+                      to={process.env.PUBLIC_URL + `/elite-network/${ele._id}`}
+                    >
+                      {ele?.planName}
+                    </Link>
+                  </li>
+                ))}
+              {/* <li className="">
                 <Link to={process.env.PUBLIC_URL + "/pitraDosh"}>
                   INF Elite Plus
                 </Link>
@@ -142,7 +148,7 @@ const NavMenu = ({ strings, menuWhiteClass, sidebarMenu }) => {
                 <Link to={process.env.PUBLIC_URL + "/kalsharpDosh"}>
                   Dental Discount Card
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </li>
 

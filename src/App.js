@@ -524,8 +524,9 @@ const App = props => {
                     path={process.env.PUBLIC_URL + "/inf-plan"}
                     component={InfPlans}
                   />
+
                   <Route
-                    path={process.env.PUBLIC_URL + "/elite-network"}
+                    path={process.env.PUBLIC_URL + "/elite-network/:id"}
                     component={EliteNetwork}
                   />
                   <Route

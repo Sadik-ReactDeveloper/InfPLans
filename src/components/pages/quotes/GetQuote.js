@@ -1,8 +1,11 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import LayoutOne from "../../../layouts/LayoutOne";
 export default function GetQuote() {
+  let history = useHistory();
   const handleSubmit = () => {
     console.log("object");
+    history.push("/inf-easy-select");
   };
   return (
     <LayoutOne headerTop="visible">

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import LayoutOne from "../../../layouts/LayoutOne";
 import "../../../assets/scss/easySelect.scss";
+import axiosConfig from "../../../axiosConfig";
 import {
   Button,
   Card,
@@ -15,14 +16,48 @@ import {
   Row,
   TabContent,
   TabPane,
+  Form,
 } from "reactstrap";
 import classnames from "classnames";
+import Filters from "./FilterDataList";
 export default function EasySelect() {
   const [filter, setFilter] = useState("1");
+  const [fromDate, setFromDate] = useState("");
+  const [toDate, setToDate] = useState("");
+  const [dateOfBirth, setDateOfBirth] = useState("");
+  const [maximum, setMaximum] = useState("");
+  const [area, setArea] = useState("");
+  const [email, setEmail] = useState("");
+  const [isData, setIsData] = useState(false);
   const toggle = ele => {
     if (filter !== ele) setFilter(ele);
   };
+  const handleSubmit = e => {
+    e.preventDefault();
+    setIsData(!isData);
+    // const payload = {
+    //   fromDate,
+    //   toDate,
+    //   dateOfBirth,
+    //   maximum,
+    //   area,
+    //   email,
+    // };
 
+    // axiosConfig
+    //   .post(`/user/quote`, payload)
+    //   .then(response => {
+    //     setIsData(!isData);
+    //     console.log(response.data);
+    //   })
+    //   .catch(error => {
+    //     console.log(error);
+    //   });
+  };
+  const maxDate = () => {
+    const today = new Date().toISOString().split("T")[0];
+    return today;
+  };
   const OnHandleClick = () => {
     var ActiveBtn = document.getElementById("btnList");
     var btns = ActiveBtn.getElementsByClassName("btn");
@@ -36,11 +71,163 @@ export default function EasySelect() {
   };
   return (
     <LayoutOne headerTop="visible">
-      <section id="quote-section-1">
+      {/* <section id="quote-section-1"> */}
+      <section
+        class="home-hero-section-bg"
+        alt="Find the righ  t coverage for your trip"
+        id="home-hero-section-background"
+      >
+        <div>
+          <h1 className="text-center">
+            GET A VISITORS INSURANCE QUOTE FOR WORLDWIDE TRAVEL
+          </h1>
+          <p className="text-center">
+            The plans may cover medically necessary testing for COVID-19 in
+            accordance with the plan terms, conditions and exclusions, while the
+            person is in the US.
+          </p>
+          <p className="text-center">
+            INF and HOP Assist Plans are not available to US residents and are
+            only available to non-US residents
+          </p>
+        </div>
+      </section>
+      <section>
         <div className="container my-5">
           <div className="row">
+            {isData === false ? (
+              <>
+                <div className="container">
+                  <Form onSubmit={e => handleSubmit(e)}>
+                    <div className="row">
+                      <div className="get-a-quote-container row py-2">
+                        <div className="form-group col-md-3 col-xs-12 qelement">
+                          <div input-group input-daterange id="cFrom">
+                            <div className="form-row">
+                              <div className="row ">
+                                <div className="col-md-6 col-lg-6 pl-0 start-date-title ">
+                                  <lable className="dates">Start Date</lable>
+                                  <input
+                                    type="date"
+                                    name="fromDate"
+                                    value={fromDate}
+                                    min={maxDate()}
+                                    className="dropped"
+                                    onChange={e => setFromDate(e.target.value)}
+                                  />
+                                </div>
+                                <div className="col-md-6 col-lg-6 pl-0 start-date-title ">
+                                  <lable className="dates">End Date</lable>
+                                  <input
+                                    type="date"
+                                    name="toDate"
+                                    value={toDate}
+                                    min={maxDate()}
+                                    className="dropped "
+                                    onChange={e => setToDate(e.target.value)}
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="col-md-5">
+                          <lable className="CoverageArea">Coverage Area</lable>
+
+                          <details className="DetailsDropdown">
+                            <summary>
+                              Coverage (for:International ,Below:)
+                            </summary>
+                            <div className="py-2">
+                              <label>Area:</label>
+                              <select
+                                class="form-control form-select"
+                                aria-label="Default select example"
+                                defaultValue=""
+                                type="select"
+                                name="allPlan"
+                                value={area}
+                                onChange={e => setArea(e.target.value)}
+                              >
+                                <option value="" disabled>
+                                  Coverage Area
+                                </option>
+                                <option value="USA/CANADA/Worldwide">
+                                  USA/CANADA/Worldwide
+                                </option>
+                                <option value="Worldwide Travel">
+                                  Worldwide Travel
+                                </option>
+                              </select>
+                            </div>
+                            <div className="py-2 mt-1">
+                              <label>Maximum:</label>
+                              <select
+                                class="form-control form-select"
+                                aria-label="Default select example"
+                                type="select"
+                                name="allPlan"
+                                value={maximum}
+                                onChange={e => setMaximum(e.target.value)}
+                              >
+                                <option value="Below $5,000,000">
+                                  Below $5,000,000
+                                </option>
+                                <option value="Below $8,000,000">
+                                  Below $8,000,000
+                                </option>
+                              </select>
+                            </div>
+                          </details>
+                        </div>
+                        <div className="col-md-4">
+                          <lable className="dob">DOB</lable>
+                          <input
+                            type="date"
+                            name="dateOfBirth"
+                            value={dateOfBirth}
+                            max={maxDate()}
+                            className="dropped "
+                            onChange={e => setDateOfBirth(e.target.value)}
+                          />
+                        </div>
+                      </div>
+                      <div
+                        className=" row py-4"
+                        style={{
+                          backgroundColor: "#252362",
+                          justifyContent: "center",
+                        }}
+                      >
+                        <div className="col-md-5 pt-2 col-xs-12 ">
+                          <input
+                            type="email"
+                            placeholder="Email Address"
+                            name="email"
+                            value={email}
+                            className="EmailInput"
+                            onChange={e => setEmail(e.target.value)}
+                          />
+                        </div>
+                        <div className="col-md-3">
+                          <button
+                            className="custombtn2 text-white"
+                            type="submit"
+                          >
+                            Get Quote
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </Form>
+                </div>
+              </>
+            ) : (
+              <Filters />
+            )}
             <div className="col-lg-12">
-              <ul className=" Btn-list" id="btnList">
+              {/* <ul className=" Btn-list" id="btnList">
                 <li>
                   <a
                     className="filter-btn"
@@ -85,9 +272,10 @@ export default function EasySelect() {
                     EMAIL Quote
                   </a>
                 </li>
-              </ul>
+              </ul> */}
               {/* <section> */}
-              <div className="container my-5 tableDesign">
+
+              {/* <div className="container my-5 tableDesign">
                 <Row>
                   <Col lg="12" md="12" sm="12">
                     <div>
@@ -194,7 +382,7 @@ export default function EasySelect() {
                     </Row>
                   </Col>
                 </Row>
-              </div>
+              </div> */}
               <div className="container my-5">
                 <div className="row">
                   <div className="col-lg-12">
@@ -252,201 +440,6 @@ export default function EasySelect() {
                   </div>
                 </div>
               </div>
-              {/* </section> */}
-              {/* <Nav tabs>
-              <NavItem className="filterList">
-                <NavLink
-                  className={classnames({
-                    active: filter === "1",
-                    Tablehead: "Tablehead",
-                  })}
-                  onClick={() => toggle("1")}
-                >
-                  All
-                </NavLink>
-              </NavItem>
-              <NavItem className="filterList">
-                <NavLink
-                  className={classnames({
-                    active: filter === "2",
-                    Tablehead: "Tablehead",
-                  })}
-                  onClick={() => toggle("2")}
-                >
-                  TRAVEASSIST
-                </NavLink>
-              </NavItem>
-              <NavItem className="filterList">
-                <NavLink
-                  className={classnames({
-                    active: filter === "3",
-                    Tablehead: "Tablehead",
-                  })}
-                  onClick={() => toggle("3")}
-                >
-                  FIXED
-                </NavLink>
-              </NavItem>
-              <NavItem className="filterList">
-                <NavLink
-                  className={classnames({
-                    active: filter === "4",
-                    Tablehead: "Tablehead",
-                  })}
-                  onClick={() => toggle("4")}
-                >
-                  NETWORK
-                </NavLink>
-              </NavItem>
-              <NavItem className="filterList">
-                <NavLink
-                  className={classnames({
-                    active: filter === "5",
-                    Tablehead: "Tablehead",
-                  })}
-                  onClick={() => toggle("5")}
-                >
-                  BASIC
-                </NavLink>
-              </NavItem>
-              <NavItem className="filterList">
-                <NavLink
-                  className={classnames({
-                    active: filter === "6",
-                    Tablehead: "Tablehead",
-                  })}
-                  onClick={() => toggle("6")}
-                >
-                  PRE-EX
-                </NavLink>
-              </NavItem>
-            </Nav> */}
-              {/* <TabContent activeTab={filter}>
-              <TabPane tabId="1">
-                <Row>
-                  <Col lg="12" md="12" sm="12">
-                    <div>
-                      <h3 className="my-2">BMI CLASSICO</h3>
-                      <hr />
-                      <Row>
-                        <Col lg="7" md="6" sm="12">
-                          <ul>
-                            <li>
-                              A Travel Assistance Plan for Visitors Traveling to
-                              USA.
-                            </li>
-                            <li>Pre-Existing Conditions Coverage $300)</li>
-                            <li>Covers COVID-19 Testing & Treatment</li>
-                            <li>BMI Makes all Appointments</li>
-                            <li>
-                              Pays 100% of all Eligible Medical Expense directly
-                              to provides
-                            </li>
-                            <li>Policy Maximums up to $10,000</li>
-                            <li> Emergency Dental Benefits</li>
-                            <li> Trip Interruption Benefit</li>
-                            <li>
-                              No Claims Hassle as BMI Handles all claims
-                              directly
-                            </li>
-                            <li>
-                              Quotes are based on 5 days min purchase and buying
-                              more days get you reduced prices.
-                            </li>
-                          </ul>
-                        </Col>
-                        <Col lg="5" md="6" sm="12">
-                          <Row>
-                            <Col lg="6" md="12">
-                              <h3> Plan Maximum:</h3>
-                              <input
-                                type="number"
-                                placeholder=""
-                                value="1000"
-                              />
-                            </Col>
-                            <Col lg="6" md="12">
-                              <h3> Plan Deductible:</h3>
-                              <input type="number" placeholder="" value="0" />
-                            </Col>
-                          </Row>
-                        </Col>
-                      </Row>
-                    </div>
-                  </Col>
-                </Row>
-              </TabPane>
-              <TabPane tabId="2">
-                <Row>
-                  <Col sm="12">
-                    <Card body>
-                      <CardTitle>Special Title Treatment</CardTitle>
-                      <CardText>
-                        With supporting text below as a natural lead-in to
-                        additional content.
-                      </CardText>
-                      <Button>Go somewhere</Button>
-                    </Card>
-                  </Col>
-                </Row>
-              </TabPane>
-              <TabPane tabId="3">
-                <Row>
-                  <Col sm="12">
-                    <Card body>
-                      <CardTitle>Special Title Treatment</CardTitle>
-                      <CardText>
-                        With supporting text below as a natural lead-in to
-                        additional content.
-                      </CardText>
-                      <Button>Go somewhere</Button>
-                    </Card>
-                  </Col>
-                </Row>
-              </TabPane>
-              <TabPane tabId="4">
-                <Row>
-                  <Col sm="12">
-                    <Card body>
-                      <CardTitle>Special Title Treatment</CardTitle>
-                      <CardText>
-                        With supporting text below as a natural lead-in to
-                        additional content.
-                      </CardText>
-                      <Button>Go somewhere</Button>
-                    </Card>
-                  </Col>
-                </Row>
-              </TabPane>
-              <TabPane tabId="5">
-                <Row>
-                  <Col sm="12">
-                    <Card body>
-                      <CardTitle>Special Title Treatment</CardTitle>
-                      <CardText>
-                        With supporting text below as a natural lead-in to
-                        additional content.
-                      </CardText>
-                      <Button>Go somewhere</Button>
-                    </Card>
-                  </Col>
-                </Row>
-              </TabPane>
-              <TabPane tabId="6">
-                <Row>
-                  <Col sm="12">
-                    <Card body>
-                      <CardTitle>Special Title Treatment</CardTitle>
-                      <CardText>
-                        With supporting text below as a natural lead-in to
-                        additional content.
-                      </CardText>
-                      <Button>Go somewhere</Button>
-                    </Card>
-                  </Col>
-                </Row>
-              </TabPane>
-            </TabContent> */}
             </div>
           </div>
         </div>

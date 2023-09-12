@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import LayoutOne from "../../../layouts/LayoutOne";
 import planRighttImg from "../../../assets/imgs/plans/inf-logo.png";
 import eliteRight from "../../../assets/imgs/network/elite1.png";
@@ -7,6 +7,9 @@ import elite3 from "../../../assets/imgs/network/elite3.png";
 import elite4 from "../../../assets/imgs/network/elite4.png";
 import BookIcon from "../../../assets/imgs/network/book-icon.png";
 import "../../../assets/scss/elite.scss";
+import { useParams } from "react-router-dom";
+import ReactHtmlParser from "react-html-parser";
+
 import classnames from "classnames";
 import {
   Button,
@@ -22,16 +25,33 @@ import {
   TabContent,
   TabPane,
 } from "reactstrap";
+import axiosConfig from "../../../axiosConfig";
+
 export default function EliteNetwork() {
   const [currentActiveTab, setCurrentActiveTab] = useState("1");
   const [network, setNetwork] = useState("1");
+  const [ViewOnePlan, setViewOnePlan] = useState({});
 
-  const toggle = tab => {
+  const params = useParams();
+  const toggle = (tab) => {
     if (currentActiveTab !== tab) setCurrentActiveTab(tab);
   };
-  const networkFunc = ele => {
+  const networkFunc = (ele) => {
     if (network !== ele) setNetwork(ele);
   };
+  useEffect(() => {
+    // console.log(params.id);
+    axiosConfig
+      .get(`/user/getOnePlan/${params.id}`)
+      .then((response) => {
+        console.log(response?.data?.data?.Plan);
+        setViewOnePlan(response?.data?.data?.Plan);
+        // setCategoryList(response?.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [params.id]);
 
   return (
     <LayoutOne headerTop="visible">
@@ -44,8 +64,9 @@ export default function EliteNetwork() {
                   <div className="col-lg-12">
                     {/* <div> */}
                     <h2 className="text-center text-blue">
-                      What is the INF Elite International Visitor Accident &
-                      Sickness Insurance (IVAS)?
+                      What is the {ViewOnePlan && ViewOnePlan?.planName}{" "}
+                      International Visitor Accident & Sickness Insurance
+                      (IVAS)?
                     </h2>
                     {/* </div> */}
                     {/* <div className="">
@@ -55,6 +76,11 @@ export default function EliteNetwork() {
                   </div>
                   <div className="row mt-5">
                     <div className="col-lg-8 col-md-8">
+                      {ViewOnePlan && ViewOnePlan ? (
+                        <>{ReactHtmlParser(ViewOnePlan?.desc)}</>
+                      ) : (
+                        <></>
+                      )}
                       <p className="text-black">
                         INF Elite IVAS Plan is our flagship insurance program
                         for INF members visiting the USA, Canada, or Mexico.
@@ -72,11 +98,17 @@ export default function EliteNetwork() {
                       <a href="#" className="read-more">
                         Read More
                       </a>
+                      <p className="text-black">
+                        INF Elite IVAS provides coverage for pre-existing
+                        conditions as defined in the plan, as per policy
+                        limitations, exclusions and maximums, with no benefit
+                        waiting period.
+                      </p>
                     </div>
                     <div className="col-lg-4 col-md-4">
                       <img src={planRighttImg} alt="ddd" />
                       <h3 className="text-center text-blue">
-                        INF Elite IVAS Plan
+                        {ViewOnePlan && ViewOnePlan?.planName} Plan
                       </h3>
                       <Button className="plan-btn">Click to Get a Quote</Button>
                     </div>

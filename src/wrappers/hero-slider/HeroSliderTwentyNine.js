@@ -70,11 +70,10 @@ const HeroSliderTwentyNine = () => {
                                   <lable className="dates">Start Date</lable>
                                   <input
                                     type="date"
-                                    // name="cqs-date"
                                     name="fromDate"
                                     value={fromDate}
                                     min={maxDate()}
-                                    className="dropped form-control"
+                                    className="dropped"
                                     onChange={e => setFromDate(e.target.value)}
                                   />
                                 </div>
@@ -82,12 +81,10 @@ const HeroSliderTwentyNine = () => {
                                   <lable className="dates">End Date</lable>
                                   <input
                                     type="date"
-                                    // name="cqs-date"
                                     name="toDate"
                                     value={toDate}
-                                    max={maxDate()}
-                                    className="dropped form-control"
-                                    // data-toggle="dropdown"
+                                    min={maxDate()}
+                                    className="dropped "
                                     onChange={e => setToDate(e.target.value)}
                                   />
                                 </div>
@@ -149,11 +146,10 @@ const HeroSliderTwentyNine = () => {
                           <lable className="dob">DOB</lable>
                           <input
                             type="date"
-                            // name="cqs-date"
                             name="dateOfBirth"
                             value={dateOfBirth}
                             max={maxDate()}
-                            className="dropped form-control"
+                            className="dropped "
                             onChange={e => setDateOfBirth(e.target.value)}
                           />
                         </div>

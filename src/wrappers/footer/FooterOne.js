@@ -19,51 +19,51 @@ const FooterOne = ({
 }) => {
   const [scroll, setScroll] = useState(0);
   const [top, setTop] = useState(0);
-  const [categoryList, setCategoryList] = useState([]);
+  // const [categoryList, setCategoryList] = useState([]);
 
-  const [pages, setPages] = useState([]);
+  // const [pages, setPages] = useState([]);
 
-  useEffect(() => {
-    getPages();
-  }, []);
+  // useEffect(() => {
+  //   getPages();
+  // }, []);
 
-  const getPages = () => {
-    axiosConfig
-      .get(`/admin/getPages`)
-      .then(res => {
-        // console.log(res.data.data);
-        setPages(res.data.data);
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  };
+  // const getPages = () => {
+  //   axiosConfig
+  //     .get(`/admin/getPages`)
+  //     .then(res => {
+  //       // console.log(res.data.data);
+  //       setPages(res.data.data);
+  //     })
+  //     .catch(err => {
+  //       console.log(err);
+  //     });
+  // };
 
-  useEffect(() => {
-    axiosConfig
-      .get(`/admin/getallCategory`)
-      .then(response => {
-        setCategoryList(response.data.data);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  }, []);
-  useEffect(() => {
-    setTop(100);
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  // useEffect(() => {
+  //   axiosConfig
+  //     .get(`/admin/getallCategory`)
+  //     .then(response => {
+  //       setCategoryList(response.data.data);
+  //     })
+  //     .catch(error => {
+  //       console.log(error);
+  //     });
+  // }, []);
+  // useEffect(() => {
+  //   setTop(100);
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   const scrollToTop = () => {
     animateScroll.scrollToTop();
   };
 
-  const handleScroll = () => {
-    setScroll(window.scrollY);
-  };
+  // const handleScroll = () => {
+  //   setScroll(window.scrollY);
+  // };
 
   return (
     <footer
