@@ -18,10 +18,10 @@ import {
   TabPane,
   Form,
 } from "reactstrap";
-import classnames from "classnames";
+// import classnames from "classnames";
 import Filters from "./FilterDataList";
 export default function EasySelect() {
-  const [filter, setFilter] = useState("1");
+  // const [filter, setFilter] = useState("1");
   const [fromDate, setFromDate] = useState("");
   const [toDate, setToDate] = useState("");
   const [dateOfBirth, setDateOfBirth] = useState("");
@@ -29,35 +29,28 @@ export default function EasySelect() {
   const [area, setArea] = useState("");
   const [email, setEmail] = useState("");
   const [isData, setIsData] = useState(false);
-  const toggle = ele => {
-    if (filter !== ele) setFilter(ele);
-  };
-  const handleSubmit = e => {
-    e.preventDefault();
-    setIsData(!isData);
-    // const payload = {
-    //   fromDate,
-    //   toDate,
-    //   dateOfBirth,
-    //   maximum,
-    //   area,
-    //   email,
-    // };
+  // const toggle = ele => {
+  //   if (filter !== ele) setFilter(ele);
+  // };
 
-    // axiosConfig
-    //   .post(`/user/quote`, payload)
-    //   .then(response => {
-    //     setIsData(!isData);
-    //     console.log(response.data);
-    //   })
-    //   .catch(error => {
-    //     console.log(error);
-    //   });
-  };
   const maxDate = () => {
     const today = new Date().toISOString().split("T")[0];
     return today;
   };
+
+  // addition one day open
+  const today = new Date();
+  today.setDate(today.getDate() + 1); // Addition 1 days from the current date
+
+  const minDate = today.toISOString().split("T")[0];
+  // addition one day close
+
+  // addition three day open
+  const todayplus = new Date();
+  todayplus.setDate(todayplus.getDate() + 5); // Addition 1 days from the current date
+
+  const AddThreeDay = todayplus.toISOString().split("T")[0];
+  // addition three day close
   const OnHandleClick = () => {
     var ActiveBtn = document.getElementById("btnList");
     var btns = ActiveBtn.getElementsByClassName("btn");
@@ -69,6 +62,32 @@ export default function EasySelect() {
       });
     }
   };
+  const handleSubmit = e => {
+    e.preventDefault();
+    // setIsData(!isData);
+    const payload = {
+      fromDate,
+      toDate,
+      dateOfBirth,
+      maximum,
+      area,
+      email,
+    };
+    localStorage.setItem("Search_get_admin_quote", JSON.stringify(payload));
+    let Senddata = {
+      fromDate: fromDate,
+      toDate: toDate,
+    };
+    axiosConfig
+      .post(`/user/adminPlanlist`, Senddata)
+      .then(response => {
+        setIsData(!isData);
+        // console.log(response.data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
   return (
     <LayoutOne headerTop="visible">
       {/* <section id="quote-section-1"> */}
@@ -78,21 +97,21 @@ export default function EasySelect() {
         id="home-hero-section-background"
       >
         <div>
-          <h1 className="text-center">
+          <h1 className="text-center heading text-white">
             GET A VISITORS INSURANCE QUOTE FOR WORLDWIDE TRAVEL
           </h1>
-          <p className="text-center">
+          <p className="text-center ">
             The plans may cover medically necessary testing for COVID-19 in
             accordance with the plan terms, conditions and exclusions, while the
             person is in the US.
           </p>
-          <p className="text-center">
+          <p className="text-center ">
             INF and HOP Assist Plans are not available to US residents and are
             only available to non-US residents
           </p>
         </div>
       </section>
-      <section>
+      <section style={{ padding: "0px" }}>
         <div className="container my-5">
           <div className="row">
             {isData === false ? (
@@ -111,7 +130,7 @@ export default function EasySelect() {
                                     type="date"
                                     name="fromDate"
                                     value={fromDate}
-                                    min={maxDate()}
+                                    min={minDate}
                                     className="dropped"
                                     onChange={e => setFromDate(e.target.value)}
                                   />
@@ -122,7 +141,7 @@ export default function EasySelect() {
                                     type="date"
                                     name="toDate"
                                     value={toDate}
-                                    min={maxDate()}
+                                    min={AddThreeDay}
                                     className="dropped "
                                     onChange={e => setToDate(e.target.value)}
                                   />

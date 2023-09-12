@@ -68,10 +68,10 @@ iframe {
 .home-hero-section-bg:before {
   opacity: 1;
   background-image: url("../imgs//home-hero-bg.png");
-  height: 800px;
+  // height: 800px;
 }
 .home-hero-section-bg {
-  background-position: center;
+  // background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -103,6 +103,7 @@ iframe {
 }
 .custombtn2 {
   box-shadow: none;
+  // background: #252362;
   background: #7da9da;
   margin-top: 5px;
   height: 50px;

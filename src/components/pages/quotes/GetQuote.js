@@ -1,6 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import LayoutOne from "../../../layouts/LayoutOne";
+import "../../../assets/scss/easySelect.scss";
 export default function GetQuote() {
   let history = useHistory();
   const handleSubmit = () => {
@@ -23,7 +24,7 @@ export default function GetQuote() {
                     <h1 class="text-white text-center">
                       GET A VISITORS INSURANCE QUOTE
                     </h1>
-                    <p className="text-white text-center">
+                    <p className=" text-center">
                       INF has provided insurance options for millions of
                       travelers since 1988. Built during
                       <br /> the early-ages of the internet, INF has always been
@@ -49,7 +50,7 @@ export default function GetQuote() {
                   <h2 className="text-blue text-center">
                     Why choose INF Insurance?
                   </h2>
-                  <p className="text-black text-center">
+                  <p className="text-black text-center para">
                     INF has provided insurance options for millions of travelers
                     since 1988. Built during the early-ages of the internet, INF
                     has always been a technology first company. INF was the
