@@ -131,7 +131,7 @@ function OurWorkFlow({ data, sliderClass, sliderdemoClass }) {
           <div className="col-lg-4 left-content">
             {/* <div className=" "> */}
             <h2 className="">What Our Clients Have To Say</h2>
-            <p>
+            <p className="para-content">
               We pride ourselves on offering quality products and top notch
               service. See real reviews from clients.
             </p>
