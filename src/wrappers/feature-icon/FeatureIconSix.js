@@ -30,7 +30,7 @@ const FeatureIconSix = ({ spaceTopClass, spaceBottomClass }) => {
                 <a href="#">
                   <div className="what-describes-you-icon">
                     <img src={citizen} alt="citizen" />
-                    <p>Non-US Residents</p>
+                    <p className="text-center column-title">Non-US Residents</p>
                   </div>
                 </a>
               </div>
@@ -38,7 +38,9 @@ const FeatureIconSix = ({ spaceTopClass, spaceBottomClass }) => {
                 <a hre="#">
                   <div className="what-describes-you-icon">
                     <img src={greenCard} alt="greenCard" />
-                    <p>INF Visitor Insurance and Travel Assist Plans</p>
+                    <p className="text-center column-title">
+                      INF Visitor Insurance and Travel Assist Plans
+                    </p>
                   </div>
                 </a>
               </div>
@@ -49,7 +51,7 @@ const FeatureIconSix = ({ spaceTopClass, spaceBottomClass }) => {
                   <div className="what-describes-you-icon">
                     <img src={student} alt="student" />
                     {/* <p className="column-title">Non-US Residents</p> */}
-                    <p className="column-title">
+                    <p className="text-center column-title">
                       Student or Scholar on J-1 F-1 M-1, Or Q-1 Visa
                     </p>
                   </div>
@@ -59,46 +61,15 @@ const FeatureIconSix = ({ spaceTopClass, spaceBottomClass }) => {
                 <a hre="#">
                   <div className="what-describes-you-icon">
                     <img src={permanent} alt="permanent" />
-                    <p className="column-title">Travel Assist Plans</p>
+                    <p className="text-center column-title">
+                      Travel Assist Plans
+                    </p>
                   </div>
                 </a>
               </div>
             </div>
-            {/* <div className="">
-              <img src={travel} alt="Travel" />
-              <p>Non-US Residents</p>
-            </div> */}
           </div>
-          {/* <div className="col-lg-4 col-md-4">
-            <div className="">
-              <img src={travel} alt="Travel" />
-              <h4>Non-US Residents</h4>
-            </div>
-            <div className="">
-              <img src={travel} alt="Travel" />
-              <h4>Student or Scholar on J-1 F-1 M-1, Or Q-1 Visa</h4>
-            </div>
-          </div> */}
         </div>
-        {/* <div className="heading">
-          <h2>Why Choose Astrogyata ?</h2>
-          <img src={textbottom} alt="" className="sb-img" />
-        </div>
-        <div className="border-bottom">
-          <div className="row feature-icon-two-wrap">
-            {featureIconData &&
-              featureIconData.map((single, key) => {
-                return (
-                  <FeatureIconSixSingle
-                    data={single}
-                    spaceBottomClass="mb-30"
-                    textAlignClass="text-center"
-                    key={key}
-                  />
-                );
-              })}
-          </div>
-        </div> */}
       </div>
     </div>
   );
