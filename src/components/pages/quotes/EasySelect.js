@@ -29,6 +29,7 @@ export default function EasySelect() {
   const [area, setArea] = useState("");
   const [email, setEmail] = useState("");
   const [isData, setIsData] = useState(false);
+  const [Error, setError] = useState(false);
   const [PlanList, setPlanList] = useState([]);
   // const toggle = ele => {
   //   if (filter !== ele) setFilter(ele);
@@ -79,16 +80,23 @@ export default function EasySelect() {
       fromDate: fromDate,
       toDate: toDate,
     };
-    axiosConfig
-      .post(`/user/adminPlanlist`, Senddata)
-      .then((response) => {
-        setIsData(!isData);
-        console.log(response.data);
-        setPlanList(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    if (!area && !maximum) {
+      // debugger;
+      setError(true);
+    }
+    if (area && maximum) {
+      // debugger;
+      axiosConfig
+        .post(`/user/adminPlanlist`, Senddata)
+        .then((response) => {
+          setIsData(!isData);
+          console.log(response.data);
+          setPlanList(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
   };
   return (
     <LayoutOne headerTop="visible">
@@ -129,6 +137,7 @@ export default function EasySelect() {
                                 <div className="col-md-6 col-lg-6 pl-0 start-date-title ">
                                   <lable className="dates">Start Date</lable>
                                   <input
+                                    required
                                     type="date"
                                     name="fromDate"
                                     value={fromDate}
@@ -143,6 +152,7 @@ export default function EasySelect() {
                                   <lable className="dates">End Date</lable>
                                   <input
                                     type="date"
+                                    required
                                     name="toDate"
                                     value={toDate}
                                     min={AddThreeDay}
@@ -156,9 +166,17 @@ export default function EasySelect() {
                         </div>
 
                         <div className="col-md-5">
+                          <div
+                            style={{
+                              display: `${Error && Error ? "block" : "none"}`,
+                              color: "red",
+                            }}
+                            className="err"
+                          >
+                            Please Enter Details
+                          </div>
                           <lable className="CoverageArea">Coverage Area</lable>
-
-                          <details className="DetailsDropdown">
+                          <details required className="DetailsDropdown">
                             <summary>
                               Coverage (for:International ,Below:)
                             </summary>
@@ -207,6 +225,7 @@ export default function EasySelect() {
                         <div className="col-md-4">
                           <lable className="dob">DOB</lable>
                           <input
+                            required
                             type="date"
                             name="dateOfBirth"
                             value={dateOfBirth}
@@ -225,6 +244,7 @@ export default function EasySelect() {
                       >
                         <div className="col-md-5 pt-2 col-xs-12 ">
                           <input
+                            required
                             type="email"
                             placeholder="Email Address"
                             name="email"
