@@ -10,6 +10,7 @@ import { fetchProducts } from "./redux/actions/productActions";
 import rootReducer from "./redux/reducers/rootReducer";
 import products from "./data/products.json";
 import App from "./App";
+import MainState from "./Context/State";
 
 import "./assets/scss/style.scss";
 import * as serviceWorker from "./serviceWorker";
@@ -26,9 +27,11 @@ const store = createStore(
 store.dispatch(fetchProducts(products));
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <MainState>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </MainState>,
   document.getElementById("root")
 );
 

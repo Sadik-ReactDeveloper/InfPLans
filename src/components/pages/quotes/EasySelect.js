@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import LayoutOne from "../../../layouts/LayoutOne";
 import "../../../assets/scss/easySelect.scss";
 import axiosConfig from "../../../axiosConfig";
+import UserContext from "../../../Context/Context";
 import {
   Button,
   Card,
@@ -20,6 +21,7 @@ import {
 } from "reactstrap";
 // import classnames from "classnames";
 import Filters from "./FilterDataList";
+
 export default function EasySelect() {
   // const [filter, setFilter] = useState("1");
   const [fromDate, setFromDate] = useState("");
@@ -27,14 +29,17 @@ export default function EasySelect() {
   const [dateOfBirth, setDateOfBirth] = useState("");
   const [maximum, setMaximum] = useState("");
   const [area, setArea] = useState("");
+  const [obj, setobj] = useState({});
   const [email, setEmail] = useState("");
   const [isData, setIsData] = useState(false);
   const [Error, setError] = useState(false);
   const [PlanList, setPlanList] = useState([]);
+  const user = useContext(UserContext);
+  // console.log(user);
   // const toggle = ele => {
   //   if (filter !== ele) setFilter(ele);
   // };
-
+  // const Senddata = {};
   const maxDate = () => {
     const today = new Date().toISOString().split("T")[0];
     return today;
@@ -80,15 +85,16 @@ export default function EasySelect() {
       fromDate: fromDate,
       toDate: toDate,
     };
+    setobj(Senddata);
     if (!area && !maximum) {
-      // debugger;
       setError(true);
     }
     if (area && maximum) {
-      // debugger;
       axiosConfig
         .post(`/user/adminPlanlist`, Senddata)
         .then((response) => {
+          user.setProductList(response.data);
+
           setIsData(!isData);
           console.log(response.data);
           setPlanList(response.data);
@@ -268,7 +274,12 @@ export default function EasySelect() {
               </>
             ) : (
               <>
-                <Filters PlanList={PlanList} />
+                <Filters
+                  PlanList={PlanList}
+                  Senddata={obj}
+                  setPlanList={setPlanList}
+                  // handleSubmit={handleSubmit}
+                />
               </>
             )}
             <div className="col-lg-12">
