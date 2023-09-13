@@ -94,7 +94,6 @@ export default function EasySelect() {
         .post(`/user/adminPlanlist`, Senddata)
         .then((response) => {
           user.setProductList(response.data);
-
           setIsData(!isData);
           console.log(response.data);
           setPlanList(response.data);
