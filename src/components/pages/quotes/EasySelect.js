@@ -3,23 +3,7 @@ import LayoutOne from "../../../layouts/LayoutOne";
 import "../../../assets/scss/easySelect.scss";
 import axiosConfig from "../../../axiosConfig";
 import UserContext from "../../../Context/Context";
-import {
-  Button,
-  Card,
-  CardBody,
-  CardText,
-  CardTitle,
-  Col,
-  Label,
-  Nav,
-  NavItem,
-  NavLink,
-  Row,
-  TabContent,
-  TabPane,
-  Form,
-} from "reactstrap";
-// import classnames from "classnames";
+import { Form } from "reactstrap";
 import Filters from "./FilterDataList";
 
 export default function EasySelect() {
@@ -69,7 +53,7 @@ export default function EasySelect() {
       });
     }
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
     // setIsData(!isData);
     const payload = {
@@ -92,13 +76,13 @@ export default function EasySelect() {
     if (area && maximum) {
       axiosConfig
         .post(`/user/adminPlanlist`, Senddata)
-        .then((response) => {
+        .then(response => {
           user.setProductList(response.data);
           setIsData(!isData);
           console.log(response.data);
           setPlanList(response.data);
         })
-        .catch((error) => {
+        .catch(error => {
           console.log(error);
         });
     }
@@ -132,7 +116,7 @@ export default function EasySelect() {
             {isData === false ? (
               <>
                 <div className="container">
-                  <Form onSubmit={(e) => handleSubmit(e)}>
+                  <Form onSubmit={e => handleSubmit(e)}>
                     <div className="row">
                       <div className="get-a-quote-container row py-2">
                         <div className="form-group col-md-3 col-xs-12 qelement">
@@ -148,9 +132,7 @@ export default function EasySelect() {
                                     value={fromDate}
                                     min={minDate}
                                     className="dropped"
-                                    onChange={(e) =>
-                                      setFromDate(e.target.value)
-                                    }
+                                    onChange={e => setFromDate(e.target.value)}
                                   />
                                 </div>
                                 <div className="col-md-6 col-lg-6 pl-0 start-date-title ">
@@ -162,7 +144,7 @@ export default function EasySelect() {
                                     value={toDate}
                                     min={AddThreeDay}
                                     className="dropped "
-                                    onChange={(e) => setToDate(e.target.value)}
+                                    onChange={e => setToDate(e.target.value)}
                                   />
                                 </div>
                               </div>
@@ -194,7 +176,7 @@ export default function EasySelect() {
                                 type="select"
                                 name="allPlan"
                                 value={area}
-                                onChange={(e) => setArea(e.target.value)}
+                                onChange={e => setArea(e.target.value)}
                               >
                                 <option value="" disabled>
                                   Coverage Area
@@ -215,7 +197,7 @@ export default function EasySelect() {
                                 type="select"
                                 name="allPlan"
                                 value={maximum}
-                                onChange={(e) => setMaximum(e.target.value)}
+                                onChange={e => setMaximum(e.target.value)}
                               >
                                 <option value="Below $5,000,000">
                                   Below $5,000,000
@@ -236,7 +218,7 @@ export default function EasySelect() {
                             value={dateOfBirth}
                             max={maxDate()}
                             className="dropped "
-                            onChange={(e) => setDateOfBirth(e.target.value)}
+                            onChange={e => setDateOfBirth(e.target.value)}
                           />
                         </div>
                       </div>
@@ -255,7 +237,7 @@ export default function EasySelect() {
                             name="email"
                             value={email}
                             className="EmailInput"
-                            onChange={(e) => setEmail(e.target.value)}
+                            onChange={e => setEmail(e.target.value)}
                           />
                         </div>
                         <div className="col-md-3">

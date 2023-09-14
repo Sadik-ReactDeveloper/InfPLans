@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Col, Label, Row } from "reactstrap";
+import { useHistory } from "react-router-dom";
 import "../../../assets/scss/easySelect.scss";
 import axiosConfig from "../../../axiosConfig";
 import UserContext from "../../../Context/Context";
@@ -13,6 +14,7 @@ export default function Filters({
   const [listData, setListData] = useState([]);
   const [Index, setIndex] = useState(2);
   const user = useContext(UserContext);
+  const history = useHistory();
 
   const OnHandleClick = (e, data, i) => {
     setIndex(i);
@@ -43,11 +45,11 @@ export default function Filters({
     } else {
       axiosConfig
         .get(`/user/PlanlistByFilterdata/${data}`)
-        .then((response) => {
+        .then(response => {
           console.log(response.data);
           setPlanList(response.data);
         })
-        .catch((error) => {
+        .catch(error => {
           console.log(error);
         });
     }
@@ -71,7 +73,7 @@ export default function Filters({
                         color: `${Index === 1 ? "white" : ""}`,
                       }}
                       className="filter-btn"
-                      onClick={(e) => OnHandleClick(e, "Filter", 1)}
+                      onClick={e => OnHandleClick(e, "Filter", 1)}
                     >
                       Filter
                     </a>
@@ -82,7 +84,7 @@ export default function Filters({
                         backgroundColor: `${Index === 2 ? "#252362" : "white"}`,
                         color: `${Index === 2 ? "white" : ""}`,
                       }}
-                      onClick={(e) => OnHandleClick(e, "All", 2)}
+                      onClick={e => OnHandleClick(e, "All", 2)}
                       className="filter-btn"
                       href=""
                     >
@@ -91,7 +93,7 @@ export default function Filters({
                   </li>
                   <li>
                     <a
-                      onClick={(e) => OnHandleClick(e, "TRAVELASSIST", 3)}
+                      onClick={e => OnHandleClick(e, "TRAVELASSIST", 3)}
                       style={{
                         backgroundColor: `${Index === 3 ? "#252362" : "white"}`,
                         color: `${Index === 3 ? "white" : ""}`,
@@ -107,7 +109,7 @@ export default function Filters({
                         backgroundColor: `${Index === 4 ? "#252362" : "white"}`,
                         color: `${Index === 4 ? "white" : ""}`,
                       }}
-                      onClick={(e) => OnHandleClick(e, "FIXED", 4)}
+                      onClick={e => OnHandleClick(e, "FIXED", 4)}
                       href=""
                       className="filter-btn"
                     >
@@ -120,7 +122,7 @@ export default function Filters({
                         backgroundColor: `${Index === 5 ? "#252362" : "white"}`,
                         color: `${Index === 5 ? "white" : ""}`,
                       }}
-                      onClick={(e) => OnHandleClick(e, "NETWORK", 5)}
+                      onClick={e => OnHandleClick(e, "NETWORK", 5)}
                       href=""
                       className="filter-btn"
                     >
@@ -129,7 +131,7 @@ export default function Filters({
                   </li>
                   <li>
                     <a
-                      onClick={(e) => OnHandleClick(e, "BASIC", 6)}
+                      onClick={e => OnHandleClick(e, "BASIC", 6)}
                       style={{
                         backgroundColor: `${Index === 6 ? "#252362" : "white"}`,
                         color: `${Index === 6 ? "white" : ""}`,
@@ -141,7 +143,7 @@ export default function Filters({
                   </li>
                   <li>
                     <a
-                      onClick={(e) => OnHandleClick(e, "PRE-EX", 7)}
+                      onClick={e => OnHandleClick(e, "PRE-EX", 7)}
                       style={{
                         backgroundColor: `${Index === 7 ? "#252362" : "white"}`,
                         color: `${Index === 7 ? "white" : ""}`,
@@ -153,7 +155,7 @@ export default function Filters({
                   </li>
                   <li>
                     <a
-                      onClick={(e) => OnHandleClick(e, "EMAIL Quote", 8)}
+                      onClick={e => OnHandleClick(e, "EMAIL Quote", 8)}
                       style={{
                         backgroundColor: `${Index === 8 ? "#252362" : "white"}`,
                         color: `${Index === 8 ? "white" : ""}`,
@@ -251,8 +253,13 @@ export default function Filters({
                                       sm="12"
                                       className="mt-2  "
                                     >
-                                      <button className="custombtn">
-                                        Purchase{" "}
+                                      <button
+                                        className="custombtn"
+                                        onClick={() =>
+                                          history.push("/BmiPlans")
+                                        }
+                                      >
+                                        Purchase
                                       </button>
                                     </Col>
                                   </Row>

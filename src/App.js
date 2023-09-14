@@ -45,6 +45,7 @@ const EliteNetwork = lazy(() =>
   import("./components/pages/plans/EliteNetwork")
 );
 const Apply = lazy(() => import("./components/pages/apply/ApplyList"));
+const BmiPlans = lazy(() => import("./components/pages/apply/plans/BmiPlans"));
 const Extend = lazy(() => import("./components/pages/extend/Extend"));
 const GetQuote = lazy(() => import("./components/pages/quotes/GetQuote"));
 const EasySelect = lazy(() => import("./components/pages/quotes/EasySelect"));
@@ -532,6 +533,10 @@ const App = props => {
                   <Route
                     path={process.env.PUBLIC_URL + "/apply"}
                     component={Apply}
+                  />
+                  <Route
+                    path={process.env.PUBLIC_URL + "/BmiPlans"}
+                    component={BmiPlans}
                   />
                   <Route
                     path={process.env.PUBLIC_URL + "/extend"}

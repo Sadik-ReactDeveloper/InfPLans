@@ -1,15 +1,10 @@
 import React, { useState } from "react";
-import planRighttImg from "../../../assets/imgs/plans/inf-logo.png";
+import planRighttImg from "../../../../assets/imgs/plans/inf-logo.png";
 import classnames from "classnames";
-import LayoutOne from "../../../layouts/LayoutOne";
-import step from "../../../assets/img/step.png";
+import LayoutOne from "../../../../layouts/LayoutOne";
+import step from "../../../../assets/img/step.png";
 
 import {
-  Button,
-  Card,
-  CardBody,
-  CardText,
-  CardTitle,
   Col,
   CustomInput,
   Input,
