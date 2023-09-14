@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import planRighttImg from "../../../assets/imgs/plans/inf-logo.png";
 import classnames from "classnames";
 import LayoutOne from "../../../layouts/LayoutOne";
+import step from "../../../assets/img/step.png";
+
 import {
   Button,
   Card,
@@ -19,13 +21,25 @@ import {
 export default function ApplyList() {
   const [currentActiveTab, setCurrentActiveTab] = useState("1");
   const [list, setList] = useState("1");
-  const toggle = tab => {
+  const [date, setdate] = useState("");
+  const [trip_startdate, setTrip_startdate] = useState("");
+  const [trip_enddate, setTrip_enddate] = useState("");
+  // const [date, setdate] = useState("");
+  const toggle = (tab) => {
     console.log(tab);
     if (currentActiveTab !== tab) setCurrentActiveTab(tab);
   };
-  const toggleList = tab => {
+  const toggleList = (tab) => {
     console.log(tab);
     if (list !== tab) setList(tab);
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    // console.log(e);
+    console.log(name, value);
+
+    // [name]: value
   };
   return (
     <LayoutOne headerTop="visible">
@@ -59,7 +73,7 @@ export default function ApplyList() {
                         <div className="row">
                           <Nav tabs>
                             <NavItem>
-                              <div className="">
+                              <div className="toggle1">
                                 <NavLink
                                   className={classnames({
                                     active: currentActiveTab === "1",
@@ -67,7 +81,15 @@ export default function ApplyList() {
                                   })}
                                   onClick={() => toggle("1")}
                                 >
-                                  <span> Select Plan</span>
+                                  <div
+                                    style={{ justifyContent: "space-between" }}
+                                    className="d-flex selectplan"
+                                  >
+                                    <span style={{ padding: "2.5rem" }}>
+                                      Select Plan
+                                    </span>
+                                    <img src={step} alt="image" />
+                                  </div>
                                 </NavLink>
                               </div>
                             </NavItem>
@@ -82,7 +104,16 @@ export default function ApplyList() {
                                     toggle("2");
                                   }}
                                 >
-                                  <span> VISITOR INFORMATION</span>
+                                  <div
+                                    style={{ justifyContent: "space-between" }}
+                                    className="d-flex selectplan"
+                                  >
+                                    <span style={{ padding: "2.5rem" }}>
+                                      {" "}
+                                      VISITOR INFORMATION
+                                    </span>{" "}
+                                    <img src={step} alt="image" />
+                                  </div>
                                 </NavLink>
                               </div>
                             </NavItem>
@@ -97,7 +128,16 @@ export default function ApplyList() {
                                     toggle("3");
                                   }}
                                 >
-                                  <span> DEPENTAND DETAILS</span>
+                                  <div
+                                    style={{ justifyContent: "space-between" }}
+                                    className="d-flex selectplan"
+                                  >
+                                    <span style={{ padding: "2.5rem" }}>
+                                      {" "}
+                                      DEPENTAND DETAILS
+                                    </span>{" "}
+                                    <img src={step} alt="image" />
+                                  </div>
                                 </NavLink>
                               </div>
                             </NavItem>
@@ -112,79 +152,107 @@ export default function ApplyList() {
                                     toggle("4");
                                   }}
                                 >
-                                  PAYMENT DETAILS
+                                  {" "}
+                                  <div
+                                    style={{ justifyContent: "space-between" }}
+                                    className="d-flex selectplan"
+                                  >
+                                    <span style={{ padding: "2.5rem" }}>
+                                      {" "}
+                                      PAYMENT DETAILS
+                                    </span>{" "}
+                                    <img src={step} alt="image" />
+                                  </div>
                                 </NavLink>
                               </div>
                             </NavItem>
                           </Nav>
-                          <div className="container">
+                          <div className="container py-2">
                             <TabContent activeTab={currentActiveTab}>
                               <TabPane tabId="1">
                                 <Row className="px-3">
                                   <Col lg="6" md="6" sm="12">
-                                    <div>
-                                      <label>Trip Start Time </label>
-                                      <input type="date" name="date" />
-                                    </div>
-                                    <div>
-                                      <label>DOB (Age)</label>
-                                      <input type="date" name="date" />
-                                    </div>
+                                    <div className="p-1">
+                                      <div>
+                                        <label>Trip Start Time </label>
+                                        <input
+                                          className="form-control"
+                                          type="date"
+                                          name="trip_startdate"
+                                          value={trip_startdate}
+                                          onChange={handleChange}
+                                        />
+                                      </div>
+                                      {/* <div>
+                                        <label>DOB (Age)</label>
+                                        <input
+                                          className="form-control"
+                                          type="date"
+                                          name="trip_enddate"
+                                          value={trip_enddate}
+                                          onChange={handleChange}
+                                        />
+                                      </div> */}
 
-                                    <h5>PRE-EXISTING COVER</h5>
-                                    <div className="mt-2">
-                                      <select aria-label="Default select example">
-                                        <option value="1">
-                                          Pre-exiting Cover
-                                        </option>
-                                        <option value="2">
-                                          Pre-ex Coverage Included(select Pre-ex
-                                          limitation amount Below)
-                                        </option>
-                                        <option value="3">
-                                          Pre-ex Coverage Not Included
-                                        </option>
-                                      </select>
-                                    </div>
-                                    <h5 className="py-2">POLICY DEDUCTIBLE:</h5>
-                                    <div className="mt-2">
-                                      <select aria-label="Default select example">
-                                        <option value="1">
-                                          Pre-exiting Cover
-                                        </option>
-                                      </select>
+                                      {/* <h5>PRE-EXISTING COVER</h5> */}
+                                      <div className="mt-2">
+                                        <select
+                                          name="PRE-EXISTING COVER"
+                                          onChange={handleChange}
+                                          aria-label="Default select example"
+                                          defaultValue=""
+                                        >
+                                          <option value="" disable>
+                                            Departure
+                                          </option>
+                                          <option value="2">
+                                            Pre-ex Coverage Included
+                                          </option>
+                                          <option value="3">
+                                            Pre-ex Coverage Not Included
+                                          </option>
+                                        </select>
+                                      </div>
+                                      {/* <h5 className="py-2">
+                                        POLICY DEDUCTIBLE:
+                                      </h5> */}
+                                      <div className="mt-2">
+                                        <select
+                                          // aria-label="Default select example"
+                                          defaultValue=""
+                                        >
+                                          <option value="" disabled>
+                                            Destination
+                                          </option>
+                                          <option value="2">
+                                            Pre-exiting Cover
+                                          </option>
+                                          <option value="3">
+                                            Pre-exiting Cover
+                                          </option>
+                                        </select>
+                                      </div>
                                     </div>
                                   </Col>
                                   <Col lg="6" md="6" sm="12">
-                                    <div>
-                                      <label>Trip End Time </label>
-                                      <input type="date" name="date" />
-                                    </div>
-                                    <div className="my-2 mb-4">
-                                      <select aria-label="Default select example">
-                                        <option selected>Select Plan</option>
-                                        <option value="1">INF Standard</option>
-                                        <option value="2">
-                                          INF SAFE TRAVELLER USA 90
-                                        </option>
-                                        <option value="3">
-                                          INF SAFE TRAVELLER USA
-                                        </option>
-                                        <option value="4">
-                                          INF PREMIER PLUS
-                                        </option>
-                                        <option value="5">INF PREMIER</option>
-                                        <option value="6">
-                                          INF ELITE PLUS
-                                        </option>
-                                        <option value="7">INF ELITE 90</option>
-                                        <option value="8">INF ELITE </option>
-                                      </select>
-                                    </div>
-                                    <div>
+                                    <div className="p-1">
+                                      <div>
+                                        <label>Trip End Time</label>
+                                        <input
+                                          className="form-control"
+                                          type="date"
+                                          name="Trip End Time"
+                                          onChange={handleChange}
+                                        />
+                                      </div>
                                       <div className="my-2 mb-4">
-                                        <h5 className="py">POLICY MAXIMUM:</h5>
-                                        <select aria-label="Default select example">
+                                        <label>Select Plan</label>
+
+                                        <select
+                                          name="Select Plan"
+                                          onChange={handleChange}
+                                          aria-label="Default select example"
+                                        >
                                           <option selected>Select Plan</option>
                                           <option value="1">
                                             INF Standard
@@ -192,17 +260,59 @@ export default function ApplyList() {
                                           <option value="2">
                                             INF SAFE TRAVELLER USA 90
                                           </option>
+                                          <option value="3">
+                                            INF SAFE TRAVELLER USA
+                                          </option>
+                                          <option value="4">
+                                            INF PREMIER PLUS
+                                          </option>
+                                          <option value="5">INF PREMIER</option>
+                                          <option value="6">
+                                            INF ELITE PLUS
+                                          </option>
+                                          <option value="7">
+                                            INF ELITE 90
+                                          </option>
+                                          <option value="8">INF ELITE </option>
                                         </select>
                                       </div>
-                                    </div>
-                                    <div>
-                                      <div className="my-2 mb-4">
-                                        <h5 className="py">
-                                          PREEX DEDUCTIBLE/ MAX:
-                                        </h5>
-                                        <select aria-label="Default select example">
-                                          <option selected>Select Plan</option>
-                                        </select>
+                                      <div>
+                                        <div className="my-2 mb-4">
+                                          <h5 className="py">
+                                            POLICY MAXIMUM:
+                                          </h5>
+                                          <select
+                                            name="POLICY MAXIMUM"
+                                            onChange={handleChange}
+                                            aria-label="Default select example"
+                                          >
+                                            <option selected>
+                                              Select Plan
+                                            </option>
+                                            <option value="1">
+                                              INF Standard
+                                            </option>
+                                            <option value="2">
+                                              INF SAFE TRAVELLER USA 90
+                                            </option>
+                                          </select>
+                                        </div>
+                                      </div>
+                                      <div>
+                                        <div className="my-2 mb-4">
+                                          <h5 className="py">
+                                            PREEX DEDUCTIBLE/ MAX:
+                                          </h5>
+                                          <select
+                                            name="PREEX DEDUCTIBLE/MAX"
+                                            onChange={handleChange}
+                                            aria-label="Default select example"
+                                          >
+                                            <option selected>
+                                              Select Plan
+                                            </option>
+                                          </select>
+                                        </div>
                                       </div>
                                     </div>
                                   </Col>
