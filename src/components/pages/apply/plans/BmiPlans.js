@@ -3,7 +3,7 @@ import planRighttImg from "../../../../assets/imgs/plans/inf-logo.png";
 import classnames from "classnames";
 import LayoutOne from "../../../../layouts/LayoutOne";
 import step from "../../../../assets/img/step.png";
-
+import "../../../../assets/scss/bmiplan.scss";
 import {
   Col,
   CustomInput,
@@ -180,7 +180,7 @@ export default function ApplyList() {
                                         />
                                       </div>
 
-                                      <div className="mt-2">
+                                      <div className="mt-2 select dobfield">
                                         <CustomInput
                                           type="select"
                                           name="departure"
@@ -236,7 +236,7 @@ export default function ApplyList() {
                                         />
                                       </div>
 
-                                      <div className="mt-2">
+                                      <div className="mt-2 select dobfield">
                                         <CustomInput
                                           type="select"
                                           name="departure"
@@ -260,11 +260,7 @@ export default function ApplyList() {
                                       </div>
                                     </div>
                                   </Col>
-                                  <Col lg="6" md="6" sm="6">
-                                    {/* <button className="btn get-btn">
-                                      Previous
-                                    </button> */}
-                                  </Col>
+
                                   <Col lg="6" md="6" sm="6">
                                     <button className="btn get-btn">
                                       Next
@@ -272,67 +268,7 @@ export default function ApplyList() {
                                   </Col>
                                 </Row>
                               </TabPane>
-                              {/* <TabPane tabId="2">
-                                <Row>
-                                  <Col lg="12" sm="12">
-                                    <ul className="tabList">
-                                      <li className="disc">
-                                        The Beneficiary must always and without
-                                        exception contact the Emergency Central,
-                                        who in turn will coordinate a virtual
-                                        appointment by Telemedicine.
-                                      </li>
-                                      <li className="disc">
-                                        According to the opinion provided by the
-                                        Medical Department, if the Beneficiary
-                                        presents symptoms related to COVID-19,
-                                        the Assistance Center will coordinate
-                                        the relevant medical consultation,
-                                        according to the safety and health
-                                        protocols of each country.
-                                      </li>
-                                      <li className="disc">
-                                        We will cover the expenses incurred up
-                                        to the coverage limit indicated in the
-                                        voucher.
-                                      </li>
-                                    </ul>
-                                    <h3 className="p-3">
-                                      The following expenses will be covered
-                                      under the same limit:
-                                    </h3>
-                                    <ul className="tabList">
-                                      <li className="disc">
-                                        Hospital Expenses for COVID-19: In case
-                                        of requiring hospitalization to
-                                        stabilize the Beneficiary's condition.
-                                      </li>
-                                      <li className="disc">
-                                        Mechanical respirator fees: If the
-                                        Medical Department, together with the
-                                        treating doctor, considers the use of a
-                                        mechanical respirator necessary, the
-                                        Central will authorize and cover said
-                                        expense.
-                                      </li>
-                                    </ul>
-                                    <div className="text-center bmi-bg">
-                                      <h3>Important Notice</h3>
-                                      <p>
-                                        Vouchers purchased after arrival are
-                                        subject to a 5-day waiting period for
-                                        new sickness coverage and 15-day waiting
-                                        period for COVID-19 Coverage.
-                                      </p>
-                                      <p>
-                                        Vouchers must be extended before
-                                        expiration to avoid waiting period for
-                                        new sickness coverage.
-                                      </p>
-                                    </div>
-                                  </Col>
-                                </Row>
-                              </TabPane> */}
+
                               <TabPane tabId="2">
                                 <h2 className="text-center">
                                   Visitor Information
@@ -341,7 +277,6 @@ export default function ApplyList() {
                                   <Col lg="6" md="6" sm="12">
                                     <div className="p-1">
                                       <div>
-                                        <label>First Name</label>
                                         <input
                                           className="form-control"
                                           type="text"
@@ -351,63 +286,172 @@ export default function ApplyList() {
                                           onChange={handleChange}
                                         />
                                       </div>
-                                      <div>
-                                        <label>Date Of Birth</label>
-                                        <select id="sel" name="sel">
-                                          <option>item 1</option>
-                                          <option>item 2</option>
-                                          <option>item 3</option>
-                                          <option>item 4</option>
-                                        </select>
+                                      <div className="dobfield d-flex">
+                                        <div>
+                                          <label className="lablesstyle">
+                                            Date Of Birth &nbsp;&nbsp;
+                                          </label>
+                                        </div>
+                                        <div className="yearfield">
+                                          <select id="sel" name="sel">
+                                            <option>Year</option>
+                                            <option>1938</option>
+                                            <option>1939</option>
+                                            <option>1940</option>
+                                            <option>1941</option>
+                                            <option>1942</option>
+                                            <option>1943</option>
+                                            <option>1944</option>
+                                            <option>1945</option>
+                                            <option>1946</option>
+                                            <option>1947</option>
+                                            <option>1948</option>
+                                            <option>1949</option>
+                                            <option>1950</option>
+                                            <option>1951</option>
+                                            <option>1952</option>
+                                            <option>1953</option>
+                                            <option>1954</option>
+                                            <option>1955</option>
+                                            <option>1956</option>
+                                            <option>1957</option>
+                                            <option>1958</option>
+                                            <option>1959</option>
+                                            <option>1960</option>
+                                            <option>1961</option>
+                                            <option>1962</option>
+                                            <option>1963</option>
+                                            <option>1964</option>
+                                            <option>1965</option>
+                                            <option>1966</option>
+                                            <option>1967</option>
+                                            <option>1968</option>
+                                            <option>1969</option>
+                                            <option>1970</option>
+                                            <option>1971</option>
+                                            <option>1972</option>
+                                            <option>1973</option>
+                                            <option>1974</option>
+                                            <option>1975</option>
+                                            <option>1976</option>
+                                            <option>1977</option>
+                                            <option>1978</option>
+                                            <option>1979</option>
+                                            <option>1980</option>
+                                            <option>1981</option>
+                                            <option>1982</option>
+                                            <option>1983</option>
+                                            <option>1984</option>
+                                            <option>1985</option>
+                                            <option>1986</option>
+                                            <option>1987</option>
+                                            <option>1988</option>
+                                            <option>1989</option>
+                                            <option>1990</option>
+                                            <option>1991</option>
+                                            <option>1992</option>
+                                            <option>1993</option>
+                                            <option>1994</option>
+                                            <option>1995</option>
+                                            <option>1996</option>
+                                            <option>1997</option>
+                                            <option>1998</option>
+                                            <option>1999</option>
+                                            <option>2000</option>
+                                            <option>2001</option>
+                                            <option>2002</option>
+                                            <option>2003</option>
+                                            <option>2004</option>
+                                            <option>2005</option>
+                                            <option>2006</option>
+                                            <option>2007</option>
+                                            <option>2008</option>
+                                            <option>2009</option>
+                                            <option>2010</option>
+                                            <option>2011</option>
+                                            <option>2012</option>
+                                            <option>2013</option>
+                                            <option>2014</option>
+                                            <option>2015</option>
+                                            <option>2016</option>
+                                            <option>2017</option>
+                                            <option>2018</option>
+                                            <option>2019</option>
+                                            <option>2020</option>
+                                            <option>2021</option>
+                                            <option>2022</option>
+                                            <option>2023</option>
+                                          </select>
+                                        </div>
+                                        <div>
+                                          <select id="sel" name="sel">
+                                            <option>Month</option>
+                                            <option>January</option>
+                                            <option>February</option>
+                                            <option>March</option>
+                                            <option>April</option>
+                                            <option>May</option>
+                                            <option>June</option>
+                                            <option>July</option>
+                                            <option>August</option>
+                                            <option>September</option>
+                                            <option>October</option>
+                                            <option>November</option>
+                                            <option>December</option>
+                                          </select>
+                                        </div>
+                                        <div>
+                                          <select id="sel" name="sel">
+                                            <option>&nbsp;&nbsp;Day</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                            <option>13</option>
+                                            <option>14</option>
+                                            <option>15</option>
+                                            <option>16</option>
+                                            <option>17</option>
+                                            <option>18</option>
+                                            <option>19</option>
+                                            <option>20</option>
+                                            <option>21</option>
+                                            <option>22</option>
+                                            <option>23</option>
+                                            <option>24</option>
+                                            <option>25</option>
+                                            <option>26</option>
+                                            <option>27</option>
+                                            <option>28</option>
+                                            <option>29</option>
+                                            <option>30</option>
+                                            <option>31</option>
+                                          </select>
+                                        </div>
                                       </div>
-                                      <div className="mt-2">
-                                        <CustomInput
-                                          type="select"
-                                          name="departure"
-                                          required
-                                          defaultValue=""
-                                          value={departure}
-                                          onChange={e => {
-                                            setDeparture(e.target.value);
-                                          }}
-                                        >
-                                          <option value="" disabled>
-                                            Departure
-                                          </option>
-                                          <option value="Pre-ex Coverage Included">
-                                            Pre-ex Coverage Included
-                                          </option>
-                                          <option value="Pre-ex Coverage Not Included">
-                                            Pre-ex Coverage Not Included
-                                          </option>
-                                        </CustomInput>
-                                      </div>
                                       <div>
-                                        <h3>Additional Traveller Coverage</h3>
-
-                                        <Input
-                                          type="radio"
-                                          id="html"
-                                          name="additional_avg_cov"
-                                          value="additional_avg_cov"
-                                          className="m-2"
+                                        <input
+                                          className="form-control"
+                                          type="text"
+                                          placeholder="Passport Number "
+                                          name="trip_startdate"
+                                          value={trip_startdate}
+                                          onChange={handleChange}
                                         />
-                                        <label for="Yes">Yes</label>
-                                        <Input
-                                          type="radio"
-                                          id="html"
-                                          name="additional_avg_cov"
-                                          value="additional_avg_cov"
-                                          className="m-2"
-                                        />
-                                        <label for="No">No</label>
                                       </div>
                                     </div>
                                   </Col>
                                   <Col lg="6" md="6" sm="12">
                                     <div className="p-1">
                                       <div>
-                                        <label>Last Name</label>
                                         <input
                                           className="form-control"
                                           placeholder="Last Name"
@@ -417,37 +461,21 @@ export default function ApplyList() {
                                           onChange={handleChange}
                                         />
                                       </div>
+                                      <div className="select dobfield">
+                                        <select id="sel" name="sel">
+                                          <option>Male</option>
+                                          <option>FeMale</option>
+                                        </select>
+                                      </div>
                                       <div>
-                                        <label>Trip End Time</label>
                                         <input
                                           className="form-control"
-                                          type="date"
-                                          name="Trip End Time"
+                                          type="text"
+                                          placeholder="Contact No. "
+                                          name="trip_startdate"
+                                          value={trip_startdate}
                                           onChange={handleChange}
                                         />
-                                      </div>
-
-                                      <div className="mt-2">
-                                        <CustomInput
-                                          type="select"
-                                          name="departure"
-                                          required
-                                          defaultValue=""
-                                          value={departure}
-                                          onChange={e => {
-                                            setDeparture(e.target.value);
-                                          }}
-                                        >
-                                          <option value="" disabled>
-                                            Destination
-                                          </option>
-                                          <option value="Pre-ex Coverage Included">
-                                            Pre-ex Coverage Included
-                                          </option>
-                                          <option value="Pre-ex Coverage Not Included">
-                                            Pre-ex Coverage Not Included
-                                          </option>
-                                        </CustomInput>
                                       </div>
                                     </div>
                                   </Col>
@@ -455,6 +483,64 @@ export default function ApplyList() {
                                     {/* <button className="btn get-btn">
                                       Previous
                                     </button> */}
+                                  </Col>
+                                  <Col lg="12" md="12" sm="6">
+                                    <div className="my-2">
+                                      <input
+                                        className="form-control"
+                                        type="text"
+                                        placeholder="Email"
+                                        name="email"
+                                        value={trip_startdate}
+                                        onChange={handleChange}
+                                      />
+                                    </div>
+                                  </Col>
+                                  <Col lg="12" md="12" sm="6">
+                                    <h2 className="text-center">
+                                      Emergency Contact
+                                    </h2>
+                                  </Col>
+                                  <Col lg="12" md="12" sm="6">
+                                    <div className="my-2">
+                                      <input
+                                        className="input"
+                                        type="text"
+                                        placeholder="Name"
+                                        name="email"
+                                        value={trip_startdate}
+                                        onChange={handleChange}
+                                      />
+                                    </div>
+                                  </Col>
+                                  <Col lg="12" md="12" sm="6">
+                                    <div className="my-2">
+                                      <input
+                                        className="input"
+                                        type="text"
+                                        placeholder="Emergency Contact Phone"
+                                        name="email"
+                                        value={trip_startdate}
+                                        onChange={handleChange}
+                                      />
+                                    </div>
+                                  </Col>
+                                  <Col lg="12" md="12" sm="6">
+                                    <div className="my-2">
+                                      <input
+                                        className="input"
+                                        type="text"
+                                        placeholder="Emergency Contact Email"
+                                        name="email"
+                                        value={trip_startdate}
+                                        onChange={handleChange}
+                                      />
+                                    </div>
+                                  </Col>
+                                  <Col lg="6" md="6" sm="6">
+                                    <button className="btn get-btn">
+                                      Previous
+                                    </button>
                                   </Col>
                                   <Col lg="6" md="6" sm="6">
                                     <button className="btn get-btn">
@@ -504,92 +590,6 @@ export default function ApplyList() {
                             </TabContent>
                           </div>
                         </div>
-                        {/* <div className="container tabmain" id="centerDiv">
-                          <div className="bmi-list-tab">
-                            <div className="row">
-                              <Nav tabs>
-                                <NavItem className="w-50">
-                                  <div className="">
-                                    <NavLink
-                                      className={classnames({
-                                        active: list === "1",
-                                        TabBmi: "TabBmi",
-                                      })}
-                                      onClick={() => toggleList("1")}
-                                    >
-                                      PLAN Description
-                                    </NavLink>
-                                  </div>
-                                </NavItem>
-                                <NavItem className="w-50">
-                                  <div className="">
-                                    <NavLink
-                                      className={classnames({
-                                        active: list === "2",
-                                        TabBmi: "TabBmi",
-                                      })}
-                                      onClick={() => {
-                                        toggleList("2");
-                                      }}
-                                    >
-                                      Discount Services
-                                    </NavLink>
-                                  </div>
-                                </NavItem>
-                              </Nav>
-                              <div className="container">
-                                <TabContent activeTab={list}>
-                                  <TabPane tabId="1">
-                                    <Row>
-                                      <Col lg="12" sm="12">
-                                        <p>
-                                          INF Elite 90% IVAS Plan is our
-                                          flagship insurance program for INF
-                                          Health Care for people visiting
-                                          anywhere worldwide. INF Elite 90 IVAS
-                                          provides coverage for pre-existing
-                                          conditions as defined in the plan, as
-                                          per policy limitations, exclusions and
-                                          maximums, with no benefit waiting
-                                          period.
-                                        </p>
-                                        <Row>
-                                          <Col lg="6">
-                                            <div>abc</div>
-                                          </Col>
-                                          <Col lg="6">
-                                            <div>abc1222</div>
-                                          </Col>
-                                        </Row>
-                                      </Col>
-                                    </Row>
-                                  </TabPane>
-                                  <TabPane tabId="2">
-                                    <Row>
-                                      <Col lg="12" sm="12">
-                                        <ul className="tabList">
-                                          <li className="disc">
-                                            The Beneficiary must always and
-                                            without exception contact the
-                                            Emergency Central, who in turn will
-                                            coordinate a virtual appointment by
-                                            Telemedicine.
-                                          </li>
-
-                                          <li className="disc">
-                                            We will cover the expenses incurred
-                                            up to the coverage limit indicated
-                                            in the voucher.
-                                          </li>
-                                        </ul>
-                                      </Col>
-                                    </Row>
-                                  </TabPane>
-                                </TabContent>
-                              </div>
-                            </div>
-                          </div>
-                        </div> */}
                       </div>
                     </div>
                   </div>

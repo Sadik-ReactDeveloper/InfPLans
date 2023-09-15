@@ -42,17 +42,17 @@ export default function EasySelect() {
 
   const AddThreeDay = todayplus.toISOString().split("T")[0];
   // addition three day close
-  const OnHandleClick = () => {
-    var ActiveBtn = document.getElementById("btnList");
-    var btns = ActiveBtn.getElementsByClassName("btn");
-    for (var i = 0; i < btns.length; i++) {
-      btns[i].addEventListener("click", function () {
-        var current = document.getElementsByClassName("active");
-        current[0].className = current[0].className.replace(" active", "");
-        this.className += " active";
-      });
-    }
-  };
+  // const OnHandleClick = () => {
+  //   var ActiveBtn = document.getElementById("btnList");
+  //   var btns = ActiveBtn.getElementsByClassName("btn");
+  //   for (var i = 0; i < btns.length; i++) {
+  //     btns[i].addEventListener("click", function () {
+  //       var current = document.getElementsByClassName("active");
+  //       current[0].className = current[0].className.replace(" active", "");
+  //       this.className += " active";
+  //     });
+  //   }
+  // };
   const handleSubmit = e => {
     e.preventDefault();
     // setIsData(!isData);
@@ -132,7 +132,11 @@ export default function EasySelect() {
                                     value={fromDate}
                                     min={minDate}
                                     className="dropped"
-                                    onChange={e => setFromDate(e.target.value)}
+                                    onChange={e => {
+                                      debugger;
+                                      setFromDate(e.target.value);
+                                      setToDate(e.target.value + 5);
+                                    }}
                                   />
                                 </div>
                                 <div className="col-md-6 col-lg-6 pl-0 start-date-title ">
@@ -216,7 +220,8 @@ export default function EasySelect() {
                             type="date"
                             name="dateOfBirth"
                             value={dateOfBirth}
-                            max={maxDate()}
+                            // defaultValue="2013-01-08"
+                            // max={maxDate()}
                             className="dropped "
                             onChange={e => setDateOfBirth(e.target.value)}
                           />
