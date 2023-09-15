@@ -21,10 +21,10 @@ const IconGroup = ({
   // const [balance, setbalance] = useState("");
   const [carts, setCarts] = useState([]);
 
-  const handleClick = e => {
+  const handleClick = (e) => {
     e.currentTarget.nextSibling.classList.toggle("active");
   };
-  const handleLogout = e => {
+  const handleLogout = (e) => {
     window.localStorage.clear();
     // window.location.reload()
     window.location.replace("/");
@@ -39,7 +39,7 @@ const IconGroup = ({
   };
 
   //const { id } = useParams();
-  const fetchcarts = async token => {
+  const fetchcarts = async (token) => {
     const { data } = await Axios.get(
       // `http://13.235.180.192/api/admin/cartbycustomer`,
       {
@@ -104,10 +104,10 @@ const IconGroup = ({
 
     axiosConfig
       .get(`/user/viewoneuser/${user_id}`)
-      .then(response => {
+      .then((response) => {
         setCustomer(response.data.data);
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   };
@@ -121,10 +121,10 @@ const IconGroup = ({
     <div
       className={`header-right-wrap ${iconWhiteClass ? iconWhiteClass : ""}`}
     >
-      <div className="same-style account-setting  d-lg-block">
+      {/* <div className="same-style account-setting d-lg-block">
         <button
           className="account-setting-active"
-          onClick={e => handleClick(e)}
+          onClick={(e) => handleClick(e)}
         >
           {customer?.userimg ? (
             <>
@@ -217,9 +217,7 @@ const IconGroup = ({
                         <>{customer?.amount}</>
                       )}
                     </span>
-                    {/* <span className="ml-2">
-                      ₹ <FetchUserBalance />
-                    </span> */}
+                 
                   </Link>
                 </li>
                 <li>
@@ -242,11 +240,7 @@ const IconGroup = ({
                     Chat /Video Call List
                   </Link>
                 </li>
-                {/* <li>
-                  <Link to={process.env.PUBLIC_URL + "/userCallHistrory"}>
-                    Video Call History
-                  </Link>
-                </li> */}
+              
                 <li>
                   <Link to={process.env.PUBLIC_URL + "/customersupport"}>
                     Customer Support Chat
@@ -256,13 +250,9 @@ const IconGroup = ({
                 <li>
                   <Link
                     to={process.env.PUBLIC_URL + "/"}
-                    // onClick={(e) =>{(
-                    //   window.localStorage.clear()
-
-                    //   //localStorage.removeItem("auth-token","userInfo")
-                    // )}
-                    onClick={e => handleLogout()}
-                    //}
+                   
+                    onClick={(e) => handleLogout()}
+                   
                   >
                     Logout
                   </Link>
@@ -271,45 +261,6 @@ const IconGroup = ({
             )}
           </ul>
         </div>
-      </div>
-      {/* <div className="same-style header-compare">
-        <Link to={process.env.PUBLIC_URL + "/compare"}>
-          <i className="pe-7s-shuffle" />
-          <span className="count-style">
-            {compareData && compareData.length ? compareData.length : 0}
-          </span>
-        </Link>
-      </div> */}
-      {/* <div className="same-style header-wishlist">
-        <Link to={process.env.PUBLIC_URL + '/wishlist'}>
-          <i className="pe-7s-like" />
-          <span className="count-style">
-            {wish && wish.length ? wish.length : 0}
-          </span>
-        </Link>
-      </div> */}
-
-      {/* <div className="same-style cart-wrap d-none d-lg-block">
-        <button className="icon-cart" onClick={(e) => handleClick(e)}>
-          <i className="pe-7s-shopbag" />
-          <span className="count-style">
-            {carts && carts.length ? carts.length : 0}
-          </span>
-        </button>
-       
-        <MenuCart
-          carts={carts}
-          currency={currency}
-          deleteFromCart={deleteFromCart}
-        />
-      </div>
-      <div className="same-style cart-wrap d-block d-lg-none">
-        <Link className="icon-cart" to={process.env.PUBLIC_URL + '/cart'}>
-          <i className="pe-7s-shopbag" />
-          <span className="count-style">
-            {carts && carts.length ? carts.length : 0}
-          </span>
-        </Link>
       </div> */}
 
       <div className="same-style mobile-off-canvas d-block d-lg-none">
@@ -337,16 +288,16 @@ export const Fetchuserdetail = async () => {
   let user_id = JSON.parse(localStorage.getItem("user_id"));
   await axiosConfig
     .get(`/user/viewoneuser/${user_id}`)
-    .then(response => {
+    .then((response) => {
       sessionStorage.setItem("userBalance", response.data.data.amount);
 
       return response.data.data;
     })
-    .catch(error => {
+    .catch((error) => {
       console.log(error);
     });
 };
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     currency: state.currencyData,
     cartData: state.cartData,
@@ -355,7 +306,7 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     deleteFromCart: (item, addToast) => {
       dispatch(deleteFromCart(item, addToast));

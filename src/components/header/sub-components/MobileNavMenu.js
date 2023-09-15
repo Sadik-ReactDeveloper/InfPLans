@@ -2,11 +2,112 @@ import PropTypes from "prop-types";
 import React from "react";
 import { Link } from "react-router-dom";
 import { multilanguage } from "redux-multilanguage";
+import { Button } from "reactstrap";
 
 const MobileNavMenu = ({ strings }) => {
   return (
     <nav className="offcanvas-navigation" id="offcanvas-navigation">
       <ul>
+        <li>
+          <Link to={process.env.PUBLIC_URL + "/"}>{strings["home"]}</Link>
+        </li>
+
+        <li>
+          <Link to="#">Quote</Link>
+          <ul className="submenu">
+            <li className="">
+              <Link to={process.env.PUBLIC_URL + "/visitors-quote"}>
+                Get a Quote
+              </Link>
+            </li>
+            <li className="">
+              <Link to={process.env.PUBLIC_URL + "/inf-easy-select"}>
+                Premiums
+              </Link>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <Link to="#">Apply</Link>
+          <ul className="submenu">
+            <li className="">
+              <Link to={process.env.PUBLIC_URL + "/manglikdosh"}>
+                INF Plans
+              </Link>
+            </li>
+            <li className="">
+              <Link to={process.env.PUBLIC_URL + "/pitraDosh"}>
+                BMI Travel Assist
+              </Link>
+            </li>
+            <li className="">
+              <Link to={process.env.PUBLIC_URL + "/pitraDosh"}>
+                HOP Travel Assist
+              </Link>
+            </li>
+            <li className="">
+              <Link to={process.env.PUBLIC_URL + "/pitraDosh"}>
+                Diplomet America
+              </Link>
+            </li>
+            <li className="">
+              <Link to={process.env.PUBLIC_URL + "/pitraDosh"}>
+                Diplomet International
+              </Link>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <Link to="/liveAstrologer">Extend</Link>
+        </li>
+        <li>
+          <Link to="#">Plans</Link>
+        </li>
+
+        <li>
+          <Link to="#">Support</Link>
+          <ul className="submenu">
+            <li className="">
+              <Link to={process.env.PUBLIC_URL + "/manglikdosh"}>Claims</Link>
+            </li>
+            <li className="">
+              <Link to={process.env.PUBLIC_URL + "/pitraDosh"}>
+                Plan ID Card
+              </Link>
+            </li>
+            <li className="">
+              <Link to={process.env.PUBLIC_URL + "/pitraDosh"}>
+                Request A Quote
+              </Link>
+            </li>
+            <li className="">
+              <Link to={process.env.PUBLIC_URL + "/pitraDosh"}>
+                Provider Search
+              </Link>
+            </li>
+            <li className="">
+              <Link to={process.env.PUBLIC_URL + "/pitraDosh"}>
+                TeleMedicine
+              </Link>
+            </li>
+            <li className="">
+              <Link to={process.env.PUBLIC_URL + "/pitraDosh"}>
+                Dental Discount Program
+              </Link>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <Link to="#">My Account</Link>
+          <ul className="submenu">
+            <li className="">
+              <Link to={process.env.PUBLIC_URL + "/manglikdosh"}>Members</Link>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <Button className="btn btn-primary">Show Plans</Button>
+        </li>
         {/* <li>
             <Link to={process.env.PUBLIC_URL + "/shop-grid-standard"}>
               {" "}
@@ -150,7 +251,7 @@ const MobileNavMenu = ({ strings }) => {
             </ul>
           </li> */}
 
-        <li>
+        {/* <li>
           <Link to={process.env.PUBLIC_URL + "/"}>{strings["home"]}</Link>
         </li>
 
@@ -170,68 +271,42 @@ const MobileNavMenu = ({ strings }) => {
           <Link>Horoscopes</Link>
           <ul className="submenu">
             <li className="">
-              <Link to={process.env.PUBLIC_URL + "/"}>
-                {/* {strings["Horoscope 2022"]} */}
-                Horoscope 2022
-              </Link>
+              <Link to={process.env.PUBLIC_URL + "/"}>Horoscope 2022</Link>
+            </li>
+            <li className="">
+              <Link to={process.env.PUBLIC_URL + "/"}>Today's Horoscope</Link>
+            </li>
+            <li className="">
+              <Link to={process.env.PUBLIC_URL + "/"}>Weekly Horoscope</Link>
+            </li>
+            <li className="">
+              <Link to={process.env.PUBLIC_URL + "/"}>Monthly Horoscope</Link>
+            </li>
+            <li className="">
+              <Link to={process.env.PUBLIC_URL + "/"}>Yearly Horoscope</Link>
+            </li>
+            <li className="">
+              <Link to={process.env.PUBLIC_URL + "/"}>Daily Horoscope</Link>
             </li>
             <li className="">
               <Link to={process.env.PUBLIC_URL + "/"}>
-                {/* {strings["Today's Horoscope"]} */}
-                Today's Horoscope
-              </Link>
-            </li>
-            <li className="">
-              <Link to={process.env.PUBLIC_URL + "/"}>
-                {/* {strings["Weekly Horoscope"]} */}
-                Weekly Horoscope
-              </Link>
-            </li>
-            <li className="">
-              <Link to={process.env.PUBLIC_URL + "/"}>
-                {/* {strings["Monthly Horoscope"]} */}
-                Monthly Horoscope
-              </Link>
-            </li>
-            <li className="">
-              <Link to={process.env.PUBLIC_URL + "/"}>
-                {/* {strings["Yearly Horoscope"]} */}
-                Yearly Horoscope
-              </Link>
-            </li>
-            <li className="">
-              <Link to={process.env.PUBLIC_URL + "/"}>
-                {/* {strings["Daily Horoscope"]} */}
-                Daily Horoscope
-              </Link>
-            </li>
-            <li className="">
-              <Link to={process.env.PUBLIC_URL + "/"}>
-                {/* {strings["Tomorrow's Horoscope"]} */}
                 Tomorrow's Horoscope
               </Link>
             </li>
             <li className="">
               <Link to={process.env.PUBLIC_URL + "/"}>
-                {/* {strings["Yesterday's Horoscope"]} */}
                 Yesterday's Horoscope
               </Link>
             </li>
             <li className="">
-              <Link to={process.env.PUBLIC_URL + "/"}>
-                {/* {strings[" Chinese Horoscope"]} */}
-                Chinese Horoscope
-              </Link>
+              <Link to={process.env.PUBLIC_URL + "/"}>Chinese Horoscope</Link>
             </li>
           </ul>
         </li>
 
         <li className="">
-          <Link to={process.env.PUBLIC_URL + "/astromallList"}>
-            {/* {strings["Monthly Horoscope"]} */}
-            Astromall
-          </Link>
-        </li>
+          <Link to={process.env.PUBLIC_URL + "/astromallList"}>Astromall</Link>
+        </li> */}
 
         {/* <li>
               <Link to={process.env.PUBLIC_URL + "/aboutdetail"}>

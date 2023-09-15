@@ -94,15 +94,15 @@ HeaderTwo.propTypes = {
   dispatch: PropTypes.func,
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     currency: state.currencyData,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    setCurrency: currencyName => {
+    setCurrency: (currencyName) => {
       dispatch(setCurrency(currencyName));
     },
   };

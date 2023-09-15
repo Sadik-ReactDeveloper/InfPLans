@@ -34,51 +34,57 @@ const HeaderOne = ({
   };
 
   return (
-    <header
-      className={`header-area clearfix ${headerBgClass ? headerBgClass : ""} ${
-        headerPositionClass ? headerPositionClass : ""
-      }`}
-    >
-      <div
-        className={`${headerPaddingClass ? headerPaddingClass : ""} ${
-          top === "visible" ? "d-none d-lg-block" : "d-none"
-        } header-top-area ${
-          borderStyle === "fluid-border" ? "border-none" : ""
-        }`}
+    <>
+      <header
+        className={`header-area clearfix ${
+          headerBgClass ? headerBgClass : ""
+        } ${headerPositionClass ? headerPositionClass : ""}`}
       >
-        <div className={layout === "container-fluid" ? layout : "container"}>
-          {/* header top */}
-          <HeaderTop borderStyle={borderStyle} />
-        </div>
-      </div>
-
-      <div
-        className={` ${
-          headerPaddingClass ? headerPaddingClass : ""
-        } sticky-bar header-res-padding clearfix ${
-          scroll > headerTop ? "stick" : ""
-        }`}
-      >
-        <div className="container-fluid">
-          <div
-            className="row"
-            // style={{ marginBottom: "-10px" }}
-          >
-            <div className="col-xl-4 col-lg-4 col-md-2 col-4">
-              {/* header logo */}
-              <div className="logoo">
-                <Logo imageUrl={logoastro} />
-              </div>
-            </div>
-            <div className="col-xl-8 col-lg-8 d-none d-lg-block">
-              <NavMenu />
-            </div>
+        <div
+          className={`${headerPaddingClass ? headerPaddingClass : ""} ${
+            top === "visible" ? "d-none d-lg-block" : "d-none"
+          } header-top-area ${
+            borderStyle === "fluid-border" ? "border-none" : ""
+          }`}
+        >
+          <div className={layout === "container-fluid" ? layout : "container"}>
+            {/* header top */}
+            {/* <HeaderTop borderStyle={borderStyle} /> */}
           </div>
         </div>
 
-        <MobileMenu />
-      </div>
-    </header>
+        <div
+          className={` ${
+            headerPaddingClass ? headerPaddingClass : ""
+          } sticky-bar header-res-padding clearfix ${
+            scroll > headerTop ? "stick" : ""
+          }`}
+        >
+          <div className="container-fluid">
+            <div
+              className="row"
+              // style={{ marginBottom: "-10px" }}
+            >
+              <div className="col-xl-4 col-lg-4 col-md-2 col-4">
+                {/* header logo */}
+                <div className="logoo">
+                  <Logo imageUrl={logoastro} />
+                </div>
+              </div>
+              <div className="col-xl-8 col-lg-8 d-none d-lg-block">
+                <NavMenu />
+              </div>
+            </div>
+            <div>
+              {/* Icon group */}
+              <IconGroup />
+            </div>
+          </div>
+
+          <MobileMenu />
+        </div>
+      </header>
+    </>
   );
 };
 
