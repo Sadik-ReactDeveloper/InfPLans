@@ -74,10 +74,13 @@ const HeaderOne = ({
               <div className="col-xl-8 col-lg-8 d-none d-lg-block">
                 <NavMenu />
               </div>
-            </div>
-            <div>
-              {/* Icon group */}
-              <IconGroup />
+              <div
+                style={{ position: "absolute", top: "45px" }}
+                className="col-xl-4 col-lg-4 "
+              >
+                {/* Icon group */}
+                <IconGroup />
+              </div>
             </div>
           </div>
 

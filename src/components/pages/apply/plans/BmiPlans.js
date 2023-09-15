@@ -24,16 +24,16 @@ export default function ApplyList() {
   const [trip_enddate, setTrip_enddate] = useState("");
   const [departure, setDeparture] = useState("");
   // const [date, setdate] = useState("");
-  const toggle = tab => {
+  const toggle = (tab) => {
     // console.log(tab);
     if (currentActiveTab !== tab) setCurrentActiveTab(tab);
   };
-  const toggleList = tab => {
+  const toggleList = (tab) => {
     console.log(tab);
     if (list !== tab) setList(tab);
   };
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     // console.log(e);
     console.log(name, value);
@@ -187,7 +187,7 @@ export default function ApplyList() {
                                           required
                                           defaultValue=""
                                           value={departure}
-                                          onChange={e => {
+                                          onChange={(e) => {
                                             setDeparture(e.target.value);
                                           }}
                                         >
@@ -243,7 +243,7 @@ export default function ApplyList() {
                                           required
                                           defaultValue=""
                                           value={departure}
-                                          onChange={e => {
+                                          onChange={(e) => {
                                             setDeparture(e.target.value);
                                           }}
                                         >
